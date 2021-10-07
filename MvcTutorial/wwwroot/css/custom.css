@@ -1,0 +1,91 @@
+﻿nav a {
+    background-color: slategray;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display:block;
+}
+nav a:hover{
+    background-color:black;
+}
+p{
+    margin:4px
+}
+.centered {
+    text-align:center;
+}
+.vertical{
+    display:flex;
+    align-content:center;
+}
+.box {
+    color: white;
+    background-color: #7d26ff;
+    padding:20px;
+    border-radius:10px;
+}
+h1{
+    text-align:center;
+}
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    height:100vh;
+    width:60%;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+}
+footer{
+    margin-top:auto;
+    padding-bottom:15px;
+}
+.centered-table {
+    margin:auto;
+}
+.tabMenu{
+    margin:0;
+    padding:0;
+}
+.tabMenu li{
+    float:left;
+    list-style:none;
+}
+.cropToCenter{
+    max-width:max-content;
+    margin:auto;
+}
+
+/*Question classes*/
+.questionBox {
+    color: white;
+    background-color: slategray;
+    padding: 20px;
+    border-radius: 10px;
+}
+.questionText {
+    font-size: 60px;
+    margin: 0px;
+    text-align: center;
+}
+.answerBox {
+    color: white;
+    background-color: whitesmoke;
+    border-color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+.feedbackBox {
+    color: white;
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+.studyCompleteBox {
+    color: white;
+    background-color: deepskyblue;
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}

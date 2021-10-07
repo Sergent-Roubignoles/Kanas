@@ -1,0 +1,108 @@
+﻿@model MvcTutorial.Models.View_Models.QuestionViewModel
+
+@{
+    ViewData["Title"] = "Session d'étude";
+    <input id="sessionKey" type="hidden" value="@Model.SessionKey" />
+}
+
+<div class="cropToCenter">
+    <div class="questionBox">
+        <h2>Écrivez la prononciation de: </h2>
+        <h2 id="question" class="questionText">@Model.Question </h2>
+    </div>
+
+    <div class="answerBox">
+        <form action="javascript:void(0);">
+            <input type="text" id="answer" />
+            <button type="submit" onclick="ValidateAnswer()">Valider</button>
+        </form>
+    </div>
+
+    <div class="feedbackBox">
+        <p id="correctAnswer"></p>
+        <button id="nextQuestion" onclick="GetNextQuestion()">Prochaine question</button>
+    </div>
+
+    <div class="studyCompleteBox">
+        <p>Félicitations! Vous avez terminé!</p>
+        <a asp-controller="Study" asp-action="Index" id="linkToMenu">Choisir une autre étude</a>
+    </div>
+
+    <br />
+    <h3>Questions restantes: </h3>
+    <h2 id="questionsRemaining">@Model.TotalQuestions</h2>
+</div>
+
+<!--
+    
+<ruby>人権蹂躙<rt>じんけんじゅうりん</rt></ruby>
+-->
+@section Scripts{
+    <script>
+        window.onload = function () {
+            $('#answer').focus();
+        }
+
+        function ValidateAnswer() {
+            var key = $('#sessionKey').val();
+            var answer = $('#answer').val();
+            var siteUrl = window.location.origin;
+
+            $.ajax({
+                type: "POST",
+                url: siteUrl + "/Study/VerifyAnswer",
+                data: {
+                    sessionKey: key,
+                    answer: answer
+                },
+                success: function (result) {
+                    var jsonResponse = JSON.parse(result);
+
+                    $('.feedbackBox').first().toggle();
+                    $('.answerBox').first().toggle();
+                    $('#questionsRemaining').text(jsonResponse.questionsRemaining);
+                    $('#nextQuestion').focus();
+
+                    if (answer === jsonResponse.correctAnswer) {
+                        $('.feedbackBox').first().css("background-color", "green");
+                        $('#correctAnswer').text("Exact!");
+                    }
+                    else {
+                        $('.feedbackBox').first().css("background-color", "red");
+                        $('#correctAnswer').text("Bonne réponse: " + jsonResponse.correctAnswer);
+                    }
+                }
+            })
+        }
+
+        function GetNextQuestion() {
+            var key = $('#sessionKey').val();
+            var siteUrl = window.location.origin;
+
+            $.ajax({
+                type: "GET",
+                url: siteUrl + "/Study/NextQuestion",
+                data: {
+                    sessionKey: key
+                },
+                success: function (result) {
+                    var jsonResponse = JSON.parse(result);
+
+                    $('.feedbackBox').first().toggle();
+
+                    if (jsonResponse.question === "") {
+                        $('.questionBox').first().toggle();
+                        $('.studyCompleteBox').first().fadeIn("slow");
+                        $('#linkToMenu').focus();
+                    }
+                    else {
+                        $('.answerBox').first().toggle();
+                        $('#question').text(jsonResponse.question);
+                        $('#answer').val('');
+                        $('#answer').focus();
+                    }
+                }
+            })
+        }
+    </script>
+}
