@@ -64,6 +64,7 @@ footer{
 }
 .questionText {
     font-size: 60px;
+    font-style:normal;
     margin: 0px;
     text-align: center;
 }

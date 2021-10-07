@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MvcTutorial.Models
+namespace MvcTutorial.Models.Study
 {
     /// <summary>
     /// This class provides logic to go through a list of "topics" to study.
@@ -12,13 +12,13 @@ namespace MvcTutorial.Models
     /// </summary>
     public class StudySession
     {
-        public List<StudyTopic> topics;
+        public List<StudyTopicGroup> topicGroups;
         public StudyTopic currentQuestion;
         public bool studyComplete = false;
 
-        public StudySession(List<StudyTopic> topics)
+        public StudySession(List<StudyTopicGroup> topics)
         {
-            this.topics = topics;
+            topicGroups = topics;
             ChangeQuestion();
         }
 
@@ -33,14 +33,7 @@ namespace MvcTutorial.Models
         {
             var correctAnswer = currentQuestion.answer;
             if (answer == correctAnswer)
-            {
                 currentQuestion.repetitions--;
-            }
-            else
-            {
-                if (currentQuestion.repetitions <= 3)
-                    currentQuestion.repetitions++;
-            }
 
             ChangeQuestion();
             return correctAnswer;
@@ -53,24 +46,21 @@ namespace MvcTutorial.Models
         public int QuestionsRemaining()
         {
             int remainingQuestions = 0;
-            foreach (StudyTopic topic in topics)
-                remainingQuestions += topic.repetitions;
+            foreach (var topicGroup in topicGroups)
+                remainingQuestions += topicGroup.QuestionsRemaining();
+
             return remainingQuestions;
         }
 
         private void ChangeQuestion()
         {
-            List<StudyTopic> unfinishedQuestions = new List<StudyTopic>();
-            foreach (StudyTopic topic in topics)
-            {
-                if (topic.repetitions > 0)
-                    unfinishedQuestions.Add(topic);
-            }
+            if (topicGroups.First().QuestionsRemaining() == 0)
+                topicGroups.RemoveAt(0);
 
-            if (unfinishedQuestions.Count == 0)
+            if (topicGroups.Count == 0)
                 studyComplete = true;
             else
-                currentQuestion = unfinishedQuestions.ElementAt(new Random().Next(unfinishedQuestions.Count));
+                currentQuestion = topicGroups.First().NextQuestion();
         }
     }
 }

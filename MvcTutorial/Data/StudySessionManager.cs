@@ -1,4 +1,5 @@
 ﻿using MvcTutorial.Models;
+using MvcTutorial.Models.Study;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace MvcTutorial.Data
                 throw new ArgumentNullException(nameof(topicCode));
 
             var split = topicCode.Split('-');
-            var topics = new List<StudyTopic>();
+            var topicGroups = new List<StudyTopicGroup>();
 
             switch (split[0])
             {
@@ -42,7 +43,7 @@ namespace MvcTutorial.Data
                     switch (split[1])
                     {
                         case "a":
-                            string[,] simpleTopics = new string[,]
+                            topicGroups.Add(stringArrayToTopicGroup( new string[,]
                             {
                                 { "あ", "a" },
                                 { "い", "i" },
@@ -50,119 +51,288 @@ namespace MvcTutorial.Data
                                 { "え", "e" },
                                 { "お", "o" },
                                 { "ん", "n" },
-                            };
-                            for (int i = 0; i < simpleTopics.GetLength(0); i++)
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup( new string[,]
                             {
-                                topics.Add(new StudyTopic(simpleTopics[i, 0], simpleTopics[i, 1]));
-                            }
-                            //Add this list to a meta topic list
-                            //var simpleTopicList = AddStringArrayAsTopics(simpleTopics);
-
-                            /*
-                            topics.Add(new StudySession.StudyTopic("あ", "a"));
-                            topics.Add(new StudySession.StudyTopic("い", "i"));
-                            topics.Add(new StudySession.StudyTopic("う", "u"));
-                            topics.Add(new StudySession.StudyTopic("え", "e"));
-                            topics.Add(new StudySession.StudyTopic("お", "o"));
-                            topics.Add(new StudySession.StudyTopic("ん", "n"));*/
-                            break;/*
+                                { "あい", "ai" },
+                                { "あう", "au" },
+                                { "あお", "ao" },
+                                { "いいえ", "iie" },
+                                { "うえ", "ue" },
+                                { "うん", "un" },
+                                { "おおい", "ooi" },
+                                { "おん", "on" },
+                            }, 1));
+                            break;
                         case "ka":
-                            topics.Add(new StudySession.StudyTopic("か", "ka"));
-                            topics.Add(new StudySession.StudyTopic("き", "ki"));
-                            topics.Add(new StudySession.StudyTopic("く", "ku"));
-                            topics.Add(new StudySession.StudyTopic("け", "ke"));
-                            topics.Add(new StudySession.StudyTopic("こ", "ko"));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "か", "ka" },
+                                { "き", "ki" },
+                                { "く", "ku" },
+                                { "け", "ke" },
+                                { "こ", "ko" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "かう", "kau" },
+                                { "かお", "kao" },
+                                { "きく", "kiku" },
+                                { "あき", "aki" },
+                                { "おこ", "oko" },
+                                { "うけ", "uke" },
+                                { "いき", "iki" },
+                                { "いかん", "ikan" },
+                                { "きけん", "kiken" },
+                            }, 1));
                             break;
                         case "ga":
-                            topics.Add(new StudySession.StudyTopic("が", "ga"));
-                            topics.Add(new StudySession.StudyTopic("ぎ", "gi"));
-                            topics.Add(new StudySession.StudyTopic("ぐ", "gu"));
-                            topics.Add(new StudySession.StudyTopic("げ", "ge"));
-                            topics.Add(new StudySession.StudyTopic("ご", "go"));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "が", "ga" },
+                                { "ぎ", "gi" },
+                                { "ぐ", "gu" },
+                                { "げ", "ge" },
+                                { "ご", "go" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "けげん", "kegen" },
+                                { "くぎ", "kugi" },
+                                { "かぎ", "kagi" },
+                                { "がんこ", "ganko" },
+                                { "ぐんか", "gunka" },
+                            }, 1));
                             break;
                         case "ya":
-                            topics.Add(new StudySession.StudyTopic("や", "ya"));
-                            topics.Add(new StudySession.StudyTopic("ゆ", "yu"));
-                            topics.Add(new StudySession.StudyTopic("よ", "yo"));
-                            topics.Add(new StudySession.StudyTopic("きゃ", "kya"));
-                            topics.Add(new StudySession.StudyTopic("きゅ", "kyu"));
-                            topics.Add(new StudySession.StudyTopic("きょ", "kyo"));
-                            topics.Add(new StudySession.StudyTopic("ぎゃ", "gya"));
-                            topics.Add(new StudySession.StudyTopic("ぎゅ", "gyu"));
-                            topics.Add(new StudySession.StudyTopic("ぎょ", "gyo"));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "や", "ya" },
+                                { "ゆ", "yu" },
+                                { "よ", "yo" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "きょう", "kyou" },
+                                { "きゃく", "kyaku" },
+                                { "きんきゅう", "kinkyuu" },
+                                { "ぎゃく", "gyaku" },
+                            }, 1));
                             break;
                         case "sa":
-                            topics.Add(new StudySession.StudyTopic("さ", "sa"));
-                            topics.Add(new StudySession.StudyTopic("し", "shi"));
-                            topics.Add(new StudySession.StudyTopic("す", "su"));
-                            topics.Add(new StudySession.StudyTopic("せ", "se"));
-                            topics.Add(new StudySession.StudyTopic("そ", "so"));
-                            topics.Add(new StudySession.StudyTopic("ざ", "za"));
-                            topics.Add(new StudySession.StudyTopic("じ", "ji"));
-                            topics.Add(new StudySession.StudyTopic("ず", "zu"));
-                            topics.Add(new StudySession.StudyTopic("ぜ", "ze"));
-                            topics.Add(new StudySession.StudyTopic("ぞ", "zo"));
-                            topics.Add(new StudySession.StudyTopic("しゃ", "sha"));
-                            topics.Add(new StudySession.StudyTopic("しゅ", "shu"));
-                            topics.Add(new StudySession.StudyTopic("しょ", "sho"));
-                            topics.Add(new StudySession.StudyTopic("じゃ", "ja"));
-                            topics.Add(new StudySession.StudyTopic("じゅ", "ju"));
-                            topics.Add(new StudySession.StudyTopic("じょ", "jo"));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "さ", "sa" },
+                                { "し", "shi" },
+                                { "す", "su" },
+                                { "せ", "se" },
+                                { "そ", "so" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "しゃ", "sha" },
+                                { "しゅ", "shu" },
+                                { "しょ", "sho" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "しょうゆ", "shouyu" },
+                                { "すし", "sushi" },
+                                { "せいそ", "seiso" },
+                                { "すいせい", "suisei" },
+                                { "さす", "sasu" },
+                                { "ししょう", "shishou" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "ざ", "za" },
+                                { "じ", "ji" },
+                                { "ず", "zu" },
+                                { "ぜ", "ze" },
+                                { "ぞ", "zo" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "じゃ", "ja" },
+                                { "じゅ", "ju" },
+                                { "じょ", "jo" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "しずか", "shizuka" },
+                                { "ざこ", "zako" },
+                                { "じこしょうかい", "jikoshoukai" },
+                                { "ぜんぜん", "zenzen" },
+                                { "かいぞく", "kaizoku" },
+                            }, 1));
                             break;
                         case "ta":
-                            topics.Add(new StudySession.StudyTopic("た", "ta"));
-                            topics.Add(new StudySession.StudyTopic("ち", "chi"));
-                            topics.Add(new StudySession.StudyTopic("つ", "tsu"));
-                            topics.Add(new StudySession.StudyTopic("て", "te"));
-                            topics.Add(new StudySession.StudyTopic("と", "to"));
-                            topics.Add(new StudySession.StudyTopic("だ", "da"));
-                            topics.Add(new StudySession.StudyTopic("ぢ", "dji"));
-                            topics.Add(new StudySession.StudyTopic("づ", "dzu"));
-                            topics.Add(new StudySession.StudyTopic("で", "de"));
-                            topics.Add(new StudySession.StudyTopic("ど", "do"));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "た", "ta" },
+                                { "ち", "chi" },
+                                { "つ", "tsu" },
+                                { "て", "te" },
+                                { "と", "to" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "たつ", "tatsu" },
+                                { "ちいさい", "chiisai" },
+                                { "ちゃんと", "chanto" },
+                                { "たんとう", "tantou" },
+                                { "てき", "teki" },
+                                { "たて", "tate" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "かって", "katte" },
+                                { "かっこいい", "kakkoii" },
+                                { "さっさと", "sassato" },
+                                { "どっち", "docchi" },
+                                { "だっしゅつ", "dasshutsu" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "だ", "da" },
+                                { "ぢ", "dji" },
+                                { "づ", "dzu" },
+                                { "で", "de" },
+                                { "ど", "do" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "そだつ", "sodatsu" },
+                                { "ちぢむ", "chidjimu" },
+                                { "つづく", "tsudzuku" },
+                                { "だって", "datte" },
+                                { "どこ", "doko" },
+                            }, 1));
                             break;
                         case "na":
-                            topics.Add(new StudySession.StudyTopic("な", "na"));
-                            topics.Add(new StudySession.StudyTopic("に", "ni"));
-                            topics.Add(new StudySession.StudyTopic("ぬ", "nu"));
-                            topics.Add(new StudySession.StudyTopic("ね", "ne"));
-                            topics.Add(new StudySession.StudyTopic("の", "no"));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "な", "na" },
+                                { "に", "ni" },
+                                { "ぬ", "nu" },
+                                { "ね", "ne" },
+                                { "の", "no" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "なんだ", "nanda" },
+                                { "なに", "nani" },
+                                { "いぬ", "inu" },
+                                { "ねえさん", "neesan" },
+                                { "ぬの", "nuno" },
+                                { "にゅうがく", "nyuugaku" },
+                                { "あんない", "annai" },
+                                { "にんじゃ", "ninja" },
+                            }, 1));
                             break;
                         case "ha":
-                            topics.Add(new StudySession.StudyTopic("は", "ha"));
-                            topics.Add(new StudySession.StudyTopic("ひ", "hi"));
-                            topics.Add(new StudySession.StudyTopic("ふ", "fu"));
-                            topics.Add(new StudySession.StudyTopic("へ", "he"));
-                            topics.Add(new StudySession.StudyTopic("ほ", "ho"));
-                            topics.Add(new StudySession.StudyTopic("ば", "ba"));
-                            topics.Add(new StudySession.StudyTopic("び", "bi"));
-                            topics.Add(new StudySession.StudyTopic("ぶ", "bu"));
-                            topics.Add(new StudySession.StudyTopic("べ", "be"));
-                            topics.Add(new StudySession.StudyTopic("ぼ", "bo"));
-                            topics.Add(new StudySession.StudyTopic("ぱ", "pa"));
-                            topics.Add(new StudySession.StudyTopic("ぴ", "pi"));
-                            topics.Add(new StudySession.StudyTopic("ぷ", "pu"));
-                            topics.Add(new StudySession.StudyTopic("ぺ", "pe"));
-                            topics.Add(new StudySession.StudyTopic("ぽ", "po"));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "は", "ha" },
+                                { "ひ", "hi" },
+                                { "ふ", "fu" },
+                                { "へ", "he" },
+                                { "ほ", "ho" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "へんたい", "hentai" },
+                                { "はんのう", "hannou" },
+                                { "とうふ", "toufu" },
+                                { "ほんとう", "hontou" },
+                                { "ひどい", "hidoi" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "ば", "ba" },
+                                { "び", "bi" },
+                                { "ぶ", "bu" },
+                                { "べ", "be" },
+                                { "ぼ", "bo" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "べんとう", "bentou" },
+                                { "びんかん", "binkan" },
+                                { "ばんざい", "banzai" },
+                                { "ぶた", "buta" },
+                                { "ふんぼ", "funbo" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "ぱ", "pa" },
+                                { "ぴ", "pi" },
+                                { "ぷ", "pu" },
+                                { "ぺ", "pe" },
+                                { "ぽ", "po" },
+                            }, 1));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "せんぱい", "senpai" },
+                                { "いっぴき", "ippiki" },
+                                { "せんぷう", "senpuu" },
+                                { "いっぺん", "ippen" },
+                                { "さんぽ", "sanpo" },
+                            }, 1));
                             break;
                         case "ma":
-                            topics.Add(new StudySession.StudyTopic("ま", "ma"));
-                            topics.Add(new StudySession.StudyTopic("み", "mi"));
-                            topics.Add(new StudySession.StudyTopic("む", "mu"));
-                            topics.Add(new StudySession.StudyTopic("め", "me"));
-                            topics.Add(new StudySession.StudyTopic("も", "mo"));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "ま", "ma" },
+                                { "み", "mi" },
+                                { "む", "mu" },
+                                { "め", "me" },
+                                { "も", "mo" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "むめい", "mumei" },
+                                { "みこ", "miko" },
+                                { "つのまき", "tsunomaki" },
+                                { "ふともも", "futomomo" },
+                                { "みじゅく", "mijuku" },
+                                { "めんどう", "mendou" },
+                            }, 1));
                             break;
                         case "ra":
-                            topics.Add(new StudySession.StudyTopic("ら", "ra"));
-                            topics.Add(new StudySession.StudyTopic("り", "ri"));
-                            topics.Add(new StudySession.StudyTopic("る", "ru"));
-                            topics.Add(new StudySession.StudyTopic("れ", "re"));
-                            topics.Add(new StudySession.StudyTopic("ろ", "ro"));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "ら", "ra" },
+                                { "り", "ri" },
+                                { "る", "ru" },
+                                { "れ", "re" },
+                                { "ろ", "ro" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "らんぼう", "ranbou" },
+                                { "りんご", "ringo" },
+                                { "おとる", "otoru" },
+                                { "ひゃくれつ", "hyakuretsu" },
+                                { "ろんぱ", "ronpa" },
+                            }, 1));
                             break;
                         case "wa":
-                            topics.Add(new StudySession.StudyTopic("わ", "wa"));
-                            topics.Add(new StudySession.StudyTopic("を", "wo"));
-                            break;*/
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "わ", "wa" },
+                                { "を", "wo" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "わため", "watame" },
+                                { "あわい", "awai" },
+                            }, 1));
+                            break;
+
+                            //TO DO:
+                            //Prevent autocomplete in answer field
+                            //Prevent same question twice/do question with most attempts first
                     }
                     break;
                 case "k":
@@ -178,17 +348,16 @@ namespace MvcTutorial.Data
                     break;
             }
 
-            return new StudySession(topics);
+            return new StudySession(topicGroups);
         }
 
-        private static List<StudyTopic> AddStringArrayAsTopics(string [,] topics)
+        private static StudyTopicGroup stringArrayToTopicGroup(string[,] topics, int repetitions)
         {
             var topicList = new List<StudyTopic>();
             for (int i = 0; i < topics.GetLength(0); i++)
-            {
-                topicList.Add(new StudyTopic(topics[i, 0], topics[i, 1]));
-            }
-            return topicList;
+                topicList.Add(new StudyTopic(topics[i, 0], topics[i, 1], repetitions));
+
+            return new StudyTopicGroup(topicList);
         }
     }
 }

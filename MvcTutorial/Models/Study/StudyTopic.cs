@@ -1,4 +1,4 @@
-﻿namespace MvcTutorial.Models
+﻿namespace MvcTutorial.Models.Study
 {
     public class StudyTopic
     {
@@ -6,11 +6,11 @@
         public string answer;
         public int repetitions;
 
-        public StudyTopic(string question, string answer)
+        public StudyTopic(string question, string answer, int repetitions)
         {
             this.question = question;
             this.answer = answer;
-            repetitions = 1;
+            this.repetitions = repetitions;
         }
 
         public StudyTopic() { }
