@@ -34,7 +34,7 @@ namespace MvcTutorial.Data
                 throw new ArgumentNullException(nameof(topicCode));
 
             var split = topicCode.Split('-');
-            var topics = new List<StudySession.StudyTopic>();
+            var topics = new List<StudyTopic>();
 
             switch (split[0])
             {
@@ -51,13 +51,21 @@ namespace MvcTutorial.Data
                                 { "お", "o" },
                                 { "ん", "n" },
                             };
+                            for (int i = 0; i < simpleTopics.GetLength(0); i++)
+                            {
+                                topics.Add(new StudyTopic(simpleTopics[i, 0], simpleTopics[i, 1]));
+                            }
+                            //Add this list to a meta topic list
+                            //var simpleTopicList = AddStringArrayAsTopics(simpleTopics);
+
+                            /*
                             topics.Add(new StudySession.StudyTopic("あ", "a"));
                             topics.Add(new StudySession.StudyTopic("い", "i"));
                             topics.Add(new StudySession.StudyTopic("う", "u"));
                             topics.Add(new StudySession.StudyTopic("え", "e"));
                             topics.Add(new StudySession.StudyTopic("お", "o"));
-                            topics.Add(new StudySession.StudyTopic("ん", "n"));
-                            break;
+                            topics.Add(new StudySession.StudyTopic("ん", "n"));*/
+                            break;/*
                         case "ka":
                             topics.Add(new StudySession.StudyTopic("か", "ka"));
                             topics.Add(new StudySession.StudyTopic("き", "ki"));
@@ -154,7 +162,7 @@ namespace MvcTutorial.Data
                         case "wa":
                             topics.Add(new StudySession.StudyTopic("わ", "wa"));
                             topics.Add(new StudySession.StudyTopic("を", "wo"));
-                            break;
+                            break;*/
                     }
                     break;
                 case "k":
@@ -171,6 +179,16 @@ namespace MvcTutorial.Data
             }
 
             return new StudySession(topics);
+        }
+
+        private static List<StudyTopic> AddStringArrayAsTopics(string [,] topics)
+        {
+            var topicList = new List<StudyTopic>();
+            for (int i = 0; i < topics.GetLength(0); i++)
+            {
+                topicList.Add(new StudyTopic(topics[i, 0], topics[i, 1]));
+            }
+            return topicList;
         }
     }
 }
