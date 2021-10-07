@@ -35,7 +35,7 @@ namespace MvcTutorial.Models.Study
             if (answer == correctAnswer)
                 currentQuestion.repetitions--;
 
-            ChangeQuestion();
+            ChangeQuestion(currentQuestion.question);
             return correctAnswer;
         }
 
@@ -52,7 +52,7 @@ namespace MvcTutorial.Models.Study
             return remainingQuestions;
         }
 
-        private void ChangeQuestion()
+        private void ChangeQuestion(string previousQuestion = "")
         {
             if (topicGroups.First().QuestionsRemaining() == 0)
                 topicGroups.RemoveAt(0);
@@ -60,7 +60,7 @@ namespace MvcTutorial.Models.Study
             if (topicGroups.Count == 0)
                 studyComplete = true;
             else
-                currentQuestion = topicGroups.First().NextQuestion();
+                currentQuestion = topicGroups.First().NextQuestion(previousQuestion);
         }
     }
 }

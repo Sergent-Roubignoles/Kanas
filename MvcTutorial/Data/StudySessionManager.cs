@@ -329,10 +329,6 @@ namespace MvcTutorial.Data
                                 { "あわい", "awai" },
                             }, 1));
                             break;
-
-                            //TO DO:
-                            //Prevent autocomplete in answer field
-                            //Prevent same question twice/do question with most attempts first
                     }
                     break;
                 case "k":
