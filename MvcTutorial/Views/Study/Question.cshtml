@@ -5,10 +5,12 @@
     <input id="sessionKey" type="hidden" value="@Model.SessionKey" />
 }
 
-<div class="cropToCenter">
+<partial name="../Tutorials/Hiragana-A.cshtml" />
+
+<div class="cropToCenter displayNone" id="questions">
     <div class="questionBox">
         <h2>Écrivez la prononciation de: </h2>
-        <p id="question" class="questionText">@Model.Question </p>
+        <p id="question" class="kana">@Model.Question </p>
     </div>
 
     <div class="answerBox">
@@ -34,7 +36,7 @@
 </div>
 
 <!--
-    
+
 <ruby>人権蹂躙<rt>じんけんじゅうりん</rt></ruby>
 -->
 @section Scripts{
@@ -64,12 +66,12 @@
                     $('#nextQuestion').focus();
 
                     if (answer === jsonResponse.correctAnswer) {
-                        $('.feedbackBox').first().css("background-color", "green");
+                        $('.feedbackBox').first().css("background-color", "var(--primary-dark)");
                         $('#correctAnswer').text("Exact!");
                     }
                     else {
-                        $('.feedbackBox').first().css("background-color", "red");
-                        $('#correctAnswer').text("Bonne réponse: " + jsonResponse.correctAnswer);
+                        $('.feedbackBox').first().css("background-color", "var(--secondary-dark)");
+                        $('#correctAnswer').text("Réponse attendue: " + jsonResponse.correctAnswer);
                     }
                 }
             })
@@ -103,6 +105,12 @@
                     }
                 }
             })
+        }
+
+        function nextTutorial(windowToClose, windowToOpen) {
+            $("#" + windowToClose).fadeOut();
+            if (windowToOpen != '')
+                $("#" + windowToOpen).fadeIn();
         }
     </script>
 }

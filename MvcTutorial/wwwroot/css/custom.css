@@ -1,66 +1,118 @@
-﻿nav a {
-    background-color: slategray;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    display:block;
-}
-nav a:hover{
-    background-color:black;
-}
-p{
-    margin:4px
-}
-.centered {
-    text-align:center;
-}
-.vertical{
-    display:flex;
-    align-content:center;
-}
-.box {
-    color: white;
-    background-color: #7d26ff;
-    padding:20px;
-    border-radius:10px;
-}
-h1{
-    text-align:center;
-}
-body{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    height:100vh;
-    width:60%;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-}
-footer{
-    margin-top:auto;
-    padding-bottom:15px;
-}
-.centered-table {
-    margin:auto;
-}
-.tabMenu{
-    margin:0;
-    padding:0;
-}
-.tabMenu li{
-    float:left;
-    list-style:none;
-}
-.cropToCenter{
-    max-width:max-content;
-    margin:auto;
+﻿:root {
+    --background-color: #121212;
+    --text-light: hsla(0, 100%, 100%, 0.87);
+    --text-dark: black;
+    --primary: #00796b;
+    --primary-light: #48a999;
+    --primary-dark: #004a3f;
+    --secondary: #b71c1c;
+    --secondary-light: #f05545;
+    --secondary-dark: #7f0000;
+
+    --layer1: hsla(0, 100%, 100%, 0.05);
+    --layer2: hsla(0, 100%, 100%, 0.07);
+    --layer3: hsla(0, 100%, 100%, 0.08);
 }
 
-/*Question classes*/
-.questionBox {
-    color: white;
-    background-color: slategray;
+body {
+    font-family: roboto;
+    height: 100vh;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: var(--text-light);
+}
+
+/*#region Generic styles*/
+h1 {
+    text-align: center;
+}
+button {
+    color: var(--text-light);
+    background-color: var(--primary);
+    font-size: 20px;
+    padding: 10px;
+    border: 0px;
+    border-radius: 5px;
+}
+.relative {
+    position: relative;
+}
+.floatLeft {
+    float: left;
+}
+.centered {
+    text-align: center;
+}
+
+.vertical {
+    display: flex;
+    align-content: center;
+}
+.cropToCenter {
+    max-width: max-content;
+    margin: auto;
+}
+.displayNone {
+    display: none;
+}
+/*#endregion*/
+
+/*#region Header / Footer*/
+header {
+    margin-bottom: 10px;
+}
+nav a {
+    background-color: var(--primary);
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+nav a:hover {
+    background-color: var(--primary-light);
+    color: var(--text-dark);
+}
+.tabMenu {
+    margin: 0;
+    padding: 0;
+}
+.tabMenu li {
+    float: left;
+    list-style: none;
+}
+footer {
+    margin-top: auto;
+    padding-bottom: 15px;
+}
+/*#endregion*/
+
+/*#region Index styles*/
+.box {
+    color: var(--text-light);
+    background-color: var(--layer1);
     padding: 20px;
     border-radius: 10px;
+}
+.centered-table {
+    margin: auto;
+}
+/*#endregion*/
+
+/*#region Question styles*/
+.questionBox {
+    background-color: var(--layer1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.questionBox .kana {
+    font-size: 60px;
+    font-style: normal;
+    margin: 0px;
+    text-align: center;
 }
 .questionText {
     font-size: 60px;
@@ -69,24 +121,44 @@ footer{
     text-align: center;
 }
 .answerBox {
-    color: white;
-    background-color: whitesmoke;
-    border-color: black;
+    background-color: var(--layer1);
     padding: 20px;
     border-radius: 10px;
 }
 .feedbackBox {
-    color: white;
+    background-color: var(--layer1);
     font-size: 40px;
     padding: 20px;
     border-radius: 10px;
     display: none;
 }
 .studyCompleteBox {
-    color: white;
-    background-color: deepskyblue;
+    background-color: var(--layer1);
     font-size: 40px;
     padding: 20px;
     border-radius: 10px;
     display: none;
 }
+/*#endregion*/
+
+/*#region Tutorial styles*/
+.tutorialBox {
+    background-color: var(--layer1);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 50px;
+    width: max-content;
+    margin: auto;
+}
+.tutorialBox .kana td{
+    font-size: 60px;
+    padding: 20px;
+}
+.tutorialBox .reading td{
+    font-size: 20px;
+    text-align: center;
+}
+.tutorialBox p{
+    margin-top: 15px;
+}
+/*#endregion*/
