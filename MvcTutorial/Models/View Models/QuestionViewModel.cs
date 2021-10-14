@@ -9,14 +9,15 @@ namespace MvcTutorial.Models.View_Models
     {
         public Guid SessionKey { get; set; }
         public string Question { get; set; }
-
         public int TotalQuestions { get; set; }
+        public string TutorialView { get; set; }
 
-        public QuestionViewModel(Guid sessionKey, string question, int totalQuestions)
+        public QuestionViewModel(Guid sessionKey, string question, int totalQuestions, string tutorialView)
         {
             SessionKey = sessionKey;
             Question = question;
             TotalQuestions = totalQuestions;
+            TutorialView = tutorialView;
         }
     }
 }

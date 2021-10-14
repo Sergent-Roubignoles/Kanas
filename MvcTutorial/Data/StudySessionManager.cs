@@ -36,6 +36,7 @@ namespace MvcTutorial.Data
 
             var split = topicCode.Split('-');
             var topicGroups = new List<StudyTopicGroup>();
+            var tutorialView = "../Tutorials/Hiragana-A.cshtml";
 
             switch (split[0])
             {
@@ -63,6 +64,7 @@ namespace MvcTutorial.Data
                                 { "おおい", "ooi" },
                                 { "おん", "on" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-A.cshtml";
                             break;
                         case "ka":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -85,6 +87,7 @@ namespace MvcTutorial.Data
                                 { "いかん", "ikan" },
                                 { "きけん", "kiken" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-Ka.cshtml";
                             break;
                         case "ga":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -344,7 +347,7 @@ namespace MvcTutorial.Data
                     break;
             }
 
-            return new StudySession(topicGroups);
+            return new StudySession(topicGroups, tutorialView);
         }
 
         private static StudyTopicGroup stringArrayToTopicGroup(string[,] topics, int repetitions)

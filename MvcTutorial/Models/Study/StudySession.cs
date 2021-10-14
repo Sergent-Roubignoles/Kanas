@@ -15,10 +15,12 @@ namespace MvcTutorial.Models.Study
         public List<StudyTopicGroup> topicGroups;
         public StudyTopic currentQuestion;
         public bool studyComplete = false;
+        public string tutorialView;
 
-        public StudySession(List<StudyTopicGroup> topics)
+        public StudySession(List<StudyTopicGroup> topicGroups, string tutorialView)
         {
-            topicGroups = topics;
+            this.topicGroups = topicGroups;
+            this.tutorialView = tutorialView;
             ChangeQuestion();
         }
 
