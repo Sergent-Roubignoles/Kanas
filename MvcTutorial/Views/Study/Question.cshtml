@@ -111,6 +111,8 @@
             $("#" + windowToClose).fadeOut();
             if (windowToOpen != '')
                 $("#" + windowToOpen).fadeIn();
+            if (windowToOpen === 'questions')
+                $('#nextQuestion').focus();
         }
     </script>
 }

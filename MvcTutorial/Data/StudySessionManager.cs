@@ -106,6 +106,7 @@ namespace MvcTutorial.Data
                                 { "がんこ", "ganko" },
                                 { "ぐんか", "gunka" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-Ga.cshtml";
                             break;
                         case "ya":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -121,6 +122,7 @@ namespace MvcTutorial.Data
                                 { "きんきゅう", "kinkyuu" },
                                 { "ぎゃく", "gyaku" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-Ya.cshtml";
                             break;
                         case "sa":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -168,6 +170,7 @@ namespace MvcTutorial.Data
                                 { "ぜんぜん", "zenzen" },
                                 { "かいぞく", "kaizoku" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-Sa.cshtml";
                             break;
                         case "ta":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -206,11 +209,11 @@ namespace MvcTutorial.Data
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
                                 { "そだつ", "sodatsu" },
-                                { "ちぢむ", "chidjimu" },
                                 { "つづく", "tsudzuku" },
                                 { "だって", "datte" },
                                 { "どこ", "doko" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-Ta.cshtml";
                             break;
                         case "na":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -226,12 +229,12 @@ namespace MvcTutorial.Data
                                 { "なんだ", "nanda" },
                                 { "なに", "nani" },
                                 { "いぬ", "inu" },
-                                { "ねえさん", "neesan" },
                                 { "ぬの", "nuno" },
                                 { "にゅうがく", "nyuugaku" },
                                 { "あんない", "annai" },
                                 { "にんじゃ", "ninja" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-Na.cshtml";
                             break;
                         case "ha":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -244,7 +247,6 @@ namespace MvcTutorial.Data
                             }, 2));
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
-                                { "へんたい", "hentai" },
                                 { "はんのう", "hannou" },
                                 { "とうふ", "toufu" },
                                 { "ほんとう", "hontou" },
@@ -282,6 +284,7 @@ namespace MvcTutorial.Data
                                 { "いっぺん", "ippen" },
                                 { "さんぽ", "sanpo" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-Ha.cshtml";
                             break;
                         case "ma":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -301,6 +304,7 @@ namespace MvcTutorial.Data
                                 { "みじゅく", "mijuku" },
                                 { "めんどう", "mendou" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-Ma.cshtml";
                             break;
                         case "ra":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -319,6 +323,7 @@ namespace MvcTutorial.Data
                                 { "ひゃくれつ", "hyakuretsu" },
                                 { "ろんぱ", "ronpa" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-Ra.cshtml";
                             break;
                         case "wa":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -331,6 +336,7 @@ namespace MvcTutorial.Data
                                 { "わため", "watame" },
                                 { "あわい", "awai" },
                             }, 1));
+                            tutorialView = "../Tutorials/Hiragana-Wa.cshtml";
                             break;
                     }
                     break;
