@@ -1,9 +1,19 @@
 ﻿<div class="tutorialBox" id="tutorial">
     <h1 class="centered">Hiragana - La série Ma</h1>
-    <div id="tutorial1">
-        <p>
-            Voici les caractères à mémoriser lors de cet exercice:<br />
-        </p>
+    @{
+        string[,] kanas = {
+            { "ま", "Ma", "https://upload.wikimedia.org/wikipedia/commons/6/65/Hiragana_%E3%81%BE_stroke_order_animation.gif" },
+            { "み", "Mi", "https://upload.wikimedia.org/wikipedia/commons/d/d7/Hiragana_%E3%81%BF_stroke_order_animation.gif" },
+            { "む", "Mu", "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hiragana_%E3%82%80_stroke_order_animation.gif" },
+            { "め", "Me", "https://upload.wikimedia.org/wikipedia/commons/5/58/Hiragana_%E3%82%81_stroke_order_animation.gif" },
+            { "も", "Mo", "https://upload.wikimedia.org/wikipedia/commons/c/c1/Hiragana_%E3%82%82_stroke_order_animation.gif" },
+            };
+        ViewData["kanas"] = kanas;
+        <partial name="KanaTutorial.cshtml" view-data="ViewData" />
+    }
+
+    <div id="recap" class="hiddenBox">
+        <h2>En résumé</h2>
         <table>
             <tbody>
                 <tr class="kana">
@@ -14,7 +24,7 @@
                     <td>め</td>
                     <td>も</td>
                 </tr>
-                <tr class="reading">
+                <tr class="romaji">
                     <th>En alphabet latin:</th>
                     <td>ma</td>
                     <td>mi</td>

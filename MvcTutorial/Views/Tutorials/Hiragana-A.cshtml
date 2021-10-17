@@ -2,51 +2,45 @@
     <h1 class="centered">Hiragana - Les voyelles</h1>
     @{
         string[,] kanas = {
-        { "あ", "A", "https://upload.wikimedia.org/wikipedia/commons/d/d8/Hiragana_%E3%81%82_stroke_order_animation.gif" },
-        { "い", "I", "https://upload.wikimedia.org/wikipedia/commons/c/cf/Hiragana_%E3%81%84_stroke_order_animation.gif" },
-        { "う", "U", "https://upload.wikimedia.org/wikipedia/commons/7/7f/Hiragana_%E3%81%86_stroke_order_animation.gif" },
-        { "え", "E", "https://upload.wikimedia.org/wikipedia/commons/4/4f/Hiragana_%E3%81%88_stroke_order_animation.gif" },
-        { "お", "O", "https://upload.wikimedia.org/wikipedia/commons/7/7b/Hiragana_%E3%81%8A_stroke_order_animation.gif" },
-        { "ん", "N", "https://upload.wikimedia.org/wikipedia/commons/f/f6/Hiragana_%E3%82%93_stroke_order_animation.gif" },
+            { "あ", "A", "https://upload.wikimedia.org/wikipedia/commons/d/d8/Hiragana_%E3%81%82_stroke_order_animation.gif" },
+            { "い", "I", "https://upload.wikimedia.org/wikipedia/commons/c/cf/Hiragana_%E3%81%84_stroke_order_animation.gif" },
+            { "う", "U", "https://upload.wikimedia.org/wikipedia/commons/7/7f/Hiragana_%E3%81%86_stroke_order_animation.gif" },
+            { "え", "E", "https://upload.wikimedia.org/wikipedia/commons/4/4f/Hiragana_%E3%81%88_stroke_order_animation.gif" },
+            { "お", "O", "https://upload.wikimedia.org/wikipedia/commons/7/7b/Hiragana_%E3%81%8A_stroke_order_animation.gif" },
+            { "ん", "N", "https://upload.wikimedia.org/wikipedia/commons/f/f6/Hiragana_%E3%82%93_stroke_order_animation.gif" },
         };
-        for (int i = 0; i < kanas.GetLength(0); i++)
-        {
-            var divClass = "displayNone";
-            var divId = "tutorial-" + kanas[i, 1];
-            if (i == 0)
-                divClass = "";
-
-            <div id=@divId class=@divClass>
-                <table>
-                    <tbody>
-                        <tr class="centered">
-                            <td>Prononciation:</td>
-                            <td>En hiragana:</td>
-                            <td>L'ordre des traits:</td>
-                        </tr>
-                        <tr>
-                            <td class="tutorialRomaji">@kanas[i, 1]</td>
-                            <td class="tutorialKana">@kanas[i, 0]</td>
-                            <td>
-                                <img src=@kanas[i, 2] />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                @{
-                    if (i == kanas.GetLength(0) - 1)
-                    {
-                        <button onclick="nextTutorial('@divId', 'tutorial2')">Suivant</button>
-                    }
-                    else
-                    {
-                        <button onclick="nextTutorial('@divId', '@("tutorial-" + kanas[i + 1, 1])')">Suivant</button>
-                    }
-                }
-            </div>
-        }
+        ViewData["kanas"] = kanas;
+        <partial name="KanaTutorial.cshtml" view-data="ViewData"/>
     }
-    <div id="tutorial2" class="displayNone">
+
+    <div id="recap" class="hiddenBox">
+        <h2>En résumé</h2>
+        <table>
+            <tbody>
+                <tr class="kana">
+                    <th></th>
+                    <td>あ</td>
+                    <td>い</td>
+                    <td>う</td>
+                    <td>え</td>
+                    <td>お</td>
+                    <td>ん</td>
+                </tr>
+                <tr class="romaji">
+                    <th>En alphabet latin:</th>
+                    <td>A</td>
+                    <td>I</td>
+                    <td>U</td>
+                    <td>E</td>
+                    <td>O</td>
+                    <td>N</td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="nextTutorial('recap', 'final-notes')">Suivant</button>
+    </div>
+
+    <div id="final-notes" class="hiddenBox">
         <br /><h2>Note sur la prononciation à l'oral:</h2>
         <p>
             Veuillez noter que les voyelles japonaises ne se prononcent pas comme en français.<br />

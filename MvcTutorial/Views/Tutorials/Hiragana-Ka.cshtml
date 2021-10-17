@@ -1,53 +1,43 @@
 ﻿<div class="tutorialBox" id="tutorial">
     <h1 class="centered">Hiragana - La série Ka</h1>
-
     @{
         string[,] kanas = {
-            { "か", "Ka", "https://upload.wikimedia.org/wikipedia/commons/d/d8/Hiragana_%E3%81%82_stroke_order_animation.gif" },
-            { "き", "Ki", "https://upload.wikimedia.org/wikipedia/commons/c/cf/Hiragana_%E3%81%84_stroke_order_animation.gif" },
-            { "く", "Ku", "https://upload.wikimedia.org/wikipedia/commons/7/7f/Hiragana_%E3%81%86_stroke_order_animation.gif" },
-            { "け", "Ke", "https://upload.wikimedia.org/wikipedia/commons/4/4f/Hiragana_%E3%81%88_stroke_order_animation.gif" },
-            { "こ", "Ko", "https://upload.wikimedia.org/wikipedia/commons/7/7b/Hiragana_%E3%81%8A_stroke_order_animation.gif" },
+        { "か", "Ka", "https://upload.wikimedia.org/wikipedia/commons/9/97/Hiragana_%E3%81%8B_stroke_order_animation.gif" },
+        { "き", "Ki", "https://upload.wikimedia.org/wikipedia/commons/1/18/Hiragana_%E3%81%8D_stroke_order_animation.gif" },
+        { "く", "Ku", "https://upload.wikimedia.org/wikipedia/commons/6/68/Hiragana_%E3%81%8F_stroke_order_animation.gif" },
+        { "け", "Ke", "https://upload.wikimedia.org/wikipedia/commons/5/57/Hiragana_%E3%81%91_stroke_order_animation.gif" },
+        { "こ", "Ko", "https://upload.wikimedia.org/wikipedia/commons/8/83/Hiragana_%E3%81%93_stroke_order_animation.gif" },
         };
-        for (int i = 0; i < kanas.GetLength(0); i++)
-        {
-            var divClass = "displayNone";
-            var divId = "tutorial-" + kanas[i, 1];
-            if (i == 0)
-                divClass = "";
-
-            <div id=@divId class=@divClass>
-                <table>
-                    <tbody>
-                        <tr class="centered">
-                            <td>Prononciation:</td>
-                            <td>En hiragana:</td>
-                            <td>L'ordre des traits:</td>
-                        </tr>
-                        <tr>
-                            <td class="tutorialRomaji">@kanas[i, 1]</td>
-                            <td class="tutorialKana">@kanas[i, 0]</td>
-                            <td>
-                                <img src=@kanas[i, 2] />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                @{
-                    if (i == kanas.GetLength(0) - 1)
-                    {
-                        <button onclick="nextTutorial('@divId', 'tutorial2')">Suivant</button>
-                    }
-                    else
-                    {
-                        <button onclick="nextTutorial('@divId', '@("tutorial-" + kanas[i + 1, 1])')">Suivant</button>
-                    }
-                }
-            </div>
-        }
+        ViewData["kanas"] = kanas;
+        <partial name="KanaTutorial.cshtml" view-data="ViewData" />
     }
 
-    <div id="tutorial2" class="displayNone">
+    <div id="recap" class="hiddenBox">
+        <h2>En résumé</h2>
+        <table>
+            <tbody>
+                <tr class="kana">
+                    <th></th>
+                    <td>か</td>
+                    <td>き</td>
+                    <td>く</td>
+                    <td>け</td>
+                    <td>こ</td>
+                </tr>
+                <tr class="romaji">
+                    <th>En alphabet latin:</th>
+                    <td>Ka</td>
+                    <td>Ki</td>
+                    <td>Ku</td>
+                    <td>Ke</td>
+                    <td>Ko</td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="nextTutorial('recap', 'final-notes')">Suivant</button>
+    </div>
+
+    <div id="final-notes" class="hiddenBox">
         <br /><h2>Note sur la prononciation à l'oral:</h2>
         <p>
             En japonais, le son おう ne se prononce pas o-u, mais plutôt comme un o long.<br />

@@ -1,0 +1,39 @@
+﻿@{
+    string[,] kanas = this.ViewData.ContainsKey("kanas") ? (string[,])this.ViewData["kanas"] : null;
+    for (int i = 0; i < kanas.GetLength(0); i++)
+    {
+        var divClass = "displayNone";
+        var divId = "tutorial-" + kanas[i, 1];
+        if (i == 0)
+            divClass = "";
+
+        <div id=@divId class="@divClass relative">
+            <table>
+                <tbody>
+                    <tr class="centered">
+                        <td>Prononciation:</td>
+                        <td>En hiragana:</td>
+                        <td>L'ordre des traits:</td>
+                    </tr>
+                    <tr>
+                        <td class="tutorialRomaji">@kanas[i, 1]</td>
+                        <td class="tutorialKana">@kanas[i, 0]</td>
+                        <td>
+                            <img src=@kanas[i, 2] />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            @{
+                if (i == kanas.GetLength(0) - 1)
+                {
+                    <button onclick="nextTutorial('@divId', 'recap')">Suivant @("(" + (i + 1).ToString() + "/" + kanas.GetLength(0) + ")")</button>
+                }
+                else
+                {
+                    <button onclick="nextTutorial('@divId', '@("tutorial-" + kanas[i + 1, 1])')">Suivant @("(" + (i + 1).ToString() + "/" + kanas.GetLength(0) + ")")</button>
+                }
+            }
+        </div>
+    }
+}

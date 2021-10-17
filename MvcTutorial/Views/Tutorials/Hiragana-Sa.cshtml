@@ -1,9 +1,19 @@
 ﻿<div class="tutorialBox" id="tutorial">
     <h1 class="centered">Hiragana - La série Sa</h1>
-    <div id="tutorial1">
-        <p>
-            Voici les caractères à mémoriser lors de cet exercice:<br />
-        </p>
+    @{
+        string[,] kanas = {
+            { "さ", "Sa", "https://upload.wikimedia.org/wikipedia/commons/7/79/Hiragana_%E3%81%95_stroke_order_animation.gif" },
+            { "し", "Shi", "https://upload.wikimedia.org/wikipedia/commons/a/a4/Hiragana_%E3%81%97_stroke_order_animation.gif" },
+            { "す", "Su", "https://upload.wikimedia.org/wikipedia/commons/0/05/Hiragana_%E3%81%99_stroke_order_animation.gif" },
+            { "せ", "Se", "https://upload.wikimedia.org/wikipedia/commons/7/7a/Hiragana_%E3%81%9B_stroke_order_animation.gif" },
+            { "そ", "So", "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hiragana_%E3%81%9D_stroke_order_animation.gif" },
+            };
+        ViewData["kanas"] = kanas;
+        <partial name="KanaTutorial.cshtml" view-data="ViewData" />
+    }
+
+    <div id="recap" class="hiddenBox">
+        <h2>En résumé</h2>
         <table>
             <tbody>
                 <tr class="kana">
@@ -14,7 +24,7 @@
                     <td>せ</td>
                     <td>そ</td>
                 </tr>
-                <tr class="reading">
+                <tr class="romaji">
                     <th>En alphabet latin:</th>
                     <td>sa</td>
                     <td>shi</td>
@@ -31,7 +41,7 @@
                     <td>ぜ</td>
                     <td>ぞ</td>
                 </tr>
-                <tr class="reading">
+                <tr class="romaji">
                     <th>En alphabet latin:</th>
                     <td>za</td>
                     <td>ji</td>
@@ -41,9 +51,10 @@
                 </tr>
             </tbody>
         </table>
-        <button onclick="nextTutorial('tutorial1', 'tutorial2')">Suivant</button>
+        <button onclick="nextTutorial('recap', 'final-notes')">Suivant</button>
     </div>
-    <div id="tutorial2" class="displayNone">
+
+    <div id="final-notes" class="hiddenBox">
         <p>
             Comme vous avez sûrement remarqué, il n'y a pas de son 'si' en japonais.<br />
             Vous pouvez tout de même écrire 'si' sur un clavier japonais, et le résultat sera し.<br />

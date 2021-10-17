@@ -150,24 +150,36 @@ footer {
     width: max-content;
     margin: auto;
 }
+.tutorialBox .hiddenBox{
+    position: relative;
+    display: none;
+    padding-bottom: 40px;
+}
+.tutorialBox button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
 .tutorialBox .kana td{
     font-size: 60px;
     padding: 20px;
 }
-.tutorialBox .reading td{
-    font-size: 20px;
+.tutorialBox .romaji td{
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+}
+.tutorialBox h2{
     text-align: center;
 }
 .tutorialBox p{
     margin-top: 15px;
 }
-
 .tutorialKana {
     font-size: 225px;
     padding-left: 40px;
     padding-right: 40px;
 }
-
 .tutorialRomaji {
     font-size: 100px;
     padding-left: 40px;
