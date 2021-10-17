@@ -1,21 +1,62 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-@{ 
-    ViewData["Title"] = "Apprenons les kanas";
+﻿@{ 
+    ViewData["Title"] = "Apprendre les kanas";
 }
 
 <div>
     <h1>Apprenons les kanas!</h1>
-</div>
-<div>
-    <table class="centered-table box">
+    <h3>Un site pour apprendre à lire et écrire le japonais, à partir de zéro.</h3>
+    <table class="mainTable">
         <tbody>
             <tr>
-                <th>
-                    <p>Les «kanas» sont les caractères fondamentaux du japonais. On les sépare en deux catégories: <b>hiraganas</b> et <b>katakanas</b>.</p>
-                    <p>Apprenez la base de l'écriture en japonais en l'espace de quelques heures.</p>
-                </th>
+                <td class="box">
+                    <h2>Hiraganas</h2>
+                    <table class="centered">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="kanaPanel">
+                                        <p>ひら</p>
+                                        <p>がな</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="centered">
+                                        <h3>La première étape</h3>
+                                        <p>46 caractères</p>
+                                        <p>~2 heures d'apprentissage</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Apprenez comment écrire n'importe quel son en japonnais.</p>
+                    <a asp-controller="Study" asp-action="Hiragana" class="aBox">Apprendre</a>
+                </td>
+
+                <td class="box">
+                    <h2>Katakanas</h2>
+                    <table class="centered">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="kanaPanel">
+                                        <p>カタ</p>
+                                        <p>カナ</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="centered">
+                                        <h3>La deuxième étape</h3>
+                                        <p>48 caractères</p>
+                                        <p>~2 heures d'apprentissage</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Une autre façon d'écrire les sons, utilisés dans des contextes spécifiques.</p>
+                    <a asp-controller="Study" asp-action="Katakana" class="aBox">Apprendre</a>
+                </td>
             </tr>
         </tbody>
     </table>

@@ -1,10 +1,13 @@
-﻿<table>
-    @{
-        string[,] values = new string[,]
-        {
+﻿<table class="box kanaIndex">
+    <tbody>
+        <tr>
+            <th><div class="romaji">Série</div></th>
+        </tr>
+        @{
+            string[,] values = new string[,]
+            {
             { "A", "あいうえお　ん", "h-a" },
             { "Ka", "かきくけこ", "h-ka" },
-            { "Ga", "がぎぐげご", "h-ga" },
             { "Ya", "や　ゆ　よ", "h-ya" },
             { "Sa", "さしすせそ", "h-sa" },
             { "Ta", "たちつてと", "h-ta" },
@@ -13,20 +16,21 @@
             { "Ma", "まみむめも", "h-ma" },
             { "Ra", "らりるれろ", "h-ra" },
             { "Wa", "わ　　　を", "h-wa" },
-        };
+            };
 
-        for (int i = 0; i < values.GetLength(0); i++)
-        {
-            <tr>
-                <th>@values[i, 0]</th>
-                <td>@values[i, 1]</td>
-                <td>
-                    <form action="Study/StartStudy" method="post">
-                        <input type="hidden" name="topicCode" value="@values[i, 2]" />
-                        <input type="submit" value="Apprendre" />
-                    </form>
-                </td>
-            </tr>
+            for (int i = 0; i < values.GetLength(0); i++)
+            {
+                <tr>
+                    <th><div class="romaji">@values[i, 0]</div></th>
+                    <td class="kana">@values[i, 1]</td>
+                    <td>
+                        <form action="StartStudy" method="post">
+                            <input type="hidden" name="topicCode" value="@values[i, 2]" />
+                            <input type="submit" value="Apprendre" class="indexInput" />
+                        </form>
+                    </td>
+                </tr>
+            }
         }
-    }
+    </tbody>
 </table>
