@@ -109,7 +109,7 @@ footer {
     margin-bottom: 10px;
 }
 .questionBox .kana {
-    font-size: 60px;
+    font-size: 100px;
     font-style: normal;
     margin: 0px;
     text-align: center;
@@ -160,5 +160,18 @@ footer {
 }
 .tutorialBox p{
     margin-top: 15px;
+}
+
+.tutorialKana {
+    font-size: 225px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.tutorialRomaji {
+    font-size: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: 'Times New Roman', Times, serif;
 }
 /*#endregion*/

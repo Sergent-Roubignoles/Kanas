@@ -108,7 +108,7 @@
         }
 
         function nextTutorial(windowToClose, windowToOpen) {
-            $("#" + windowToClose).fadeOut();
+            $("#" + windowToClose).hide();
             if (windowToOpen != '')
                 $("#" + windowToOpen).fadeIn();
             if (windowToOpen === 'questions')
