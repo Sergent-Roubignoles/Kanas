@@ -8,10 +8,12 @@ namespace MvcTutorial.Models.Study
     public class StudyTopicGroup
     {
         private List<StudyTopic> topics;
+        private string extraTutorialId;
 
-        public StudyTopicGroup(List<StudyTopic> topics)
+        public StudyTopicGroup(List<StudyTopic> topics, string extraTutorialId = null)
         {
             this.topics = topics;
+            this.extraTutorialId = extraTutorialId;
         }
 
         public int QuestionsRemaining()
@@ -33,6 +35,13 @@ namespace MvcTutorial.Models.Study
             }
             else
                 throw new InvalidOperationException("All questions have already been answered.");
+        }
+
+        public string GetTutorial()
+        {
+            var temp = extraTutorialId;
+            extraTutorialId = null;
+            return temp;
         }
 
         private List<StudyTopic> GetTopicsWithMostRepetitions()

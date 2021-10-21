@@ -92,27 +92,37 @@
 
                     $('.feedbackBox').first().toggle();
 
-                    if (jsonResponse.question === "") {
+                    if (jsonResponse.question === "") { //Study over
                         $('.questionBox').first().toggle();
                         $('.studyCompleteBox').first().fadeIn("slow");
                         $('#linkToMenu').focus();
                     }
-                    else {
+                    else { //Next question
                         $('.answerBox').first().toggle();
                         $('#question').text(jsonResponse.question);
                         $('#answer').val('');
-                        $('#answer').focus();
+
+                        if (jsonResponse.tutorial !== null) { //Show new tutorial
+                            $('#questions').hide();
+                            $('#tutorial').fadeIn();
+                            $('#' + jsonResponse.tutorial).show();
+                        }
+                        else {
+                            $('#answer').focus();
+                        }
                     }
                 }
             })
         }
 
-        function nextTutorial(windowToClose, windowToOpen) {
+        function nextTutorial(windowToClose, windowToOpen, closeTutorial = false) {
             $("#" + windowToClose).hide();
             if (windowToOpen != '')
                 $("#" + windowToOpen).fadeIn();
             if (windowToOpen === 'questions')
-                $('#nextQuestion').focus();
+                $('#answer').focus();
+            if (closeTutorial)
+                $('#tutorial').hide();
         }
     </script>
 }

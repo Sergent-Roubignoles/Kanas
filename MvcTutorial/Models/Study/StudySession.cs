@@ -16,6 +16,7 @@ namespace MvcTutorial.Models.Study
         public StudyTopic currentQuestion;
         public bool studyComplete = false;
         public string tutorialView;
+        public string extraTutorialId = null;
 
         public StudySession(List<StudyTopicGroup> topicGroups, string tutorialView)
         {
@@ -62,7 +63,10 @@ namespace MvcTutorial.Models.Study
             if (topicGroups.Count == 0)
                 studyComplete = true;
             else
+            {
+                extraTutorialId = topicGroups.First().GetTutorial();
                 currentQuestion = topicGroups.First().NextQuestion(previousQuestion);
+            }
         }
     }
 }

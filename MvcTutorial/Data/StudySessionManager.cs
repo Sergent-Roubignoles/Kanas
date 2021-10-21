@@ -197,7 +197,7 @@ namespace MvcTutorial.Data
                                 { "さっさと", "sassato" },
                                 { "どっち", "docchi" },
                                 { "だっしゅつ", "dasshutsu" },
-                            }, 1));
+                            }, 1, "double-consonants"));
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
                                 { "だ", "da" },
@@ -205,7 +205,7 @@ namespace MvcTutorial.Data
                                 { "づ", "dzu" },
                                 { "で", "de" },
                                 { "ど", "do" },
-                            }, 1));
+                            }, 1, "tenten"));
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
                                 { "そだつ", "sodatsu" },
@@ -356,13 +356,13 @@ namespace MvcTutorial.Data
             return new StudySession(topicGroups, tutorialView);
         }
 
-        private static StudyTopicGroup stringArrayToTopicGroup(string[,] topics, int repetitions)
+        private static StudyTopicGroup stringArrayToTopicGroup(string[,] topics, int repetitions, string extraTutorial = null)
         {
             var topicList = new List<StudyTopic>();
             for (int i = 0; i < topics.GetLength(0); i++)
                 topicList.Add(new StudyTopic(topics[i, 0], topics[i, 1], repetitions));
 
-            return new StudyTopicGroup(topicList);
+            return new StudyTopicGroup(topicList, extraTutorial);
         }
     }
 }

@@ -194,9 +194,8 @@ footer {
     width: max-content;
     margin: auto;
 }
-.tutorialBox .hiddenBox{
+.tutorialBox .paddedForButton{
     position: relative;
-    display: none;
     padding-bottom: 40px;
 }
 .tutorialBox button{

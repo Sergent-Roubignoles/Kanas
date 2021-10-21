@@ -84,6 +84,7 @@ namespace MvcTutorial.Controllers
             //Send next question to the user
             dynamic jsonResponse = new JObject();
             jsonResponse.question = nextQuestion;
+            jsonResponse.tutorial = session.extraTutorialId;
             return Newtonsoft.Json.JsonConvert.SerializeObject(jsonResponse);
         }
     }
