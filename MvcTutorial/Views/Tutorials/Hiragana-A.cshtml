@@ -13,45 +13,49 @@
         <partial name="KanaTutorial.cshtml" view-data="ViewData"/>
     }
 
-    <div id="recap" class="hiddenBox">
-        <h2>En résumé</h2>
-        <table>
-            <tbody>
-                <tr class="kana">
-                    <th></th>
-                    <td>あ</td>
-                    <td>い</td>
-                    <td>う</td>
-                    <td>え</td>
-                    <td>お</td>
-                    <td>ん</td>
-                </tr>
-                <tr class="romaji">
-                    <th>En alphabet latin:</th>
-                    <td>A</td>
-                    <td>I</td>
-                    <td>U</td>
-                    <td>E</td>
-                    <td>O</td>
-                    <td>N</td>
-                </tr>
-            </tbody>
-        </table>
-        <button onclick="nextTutorial('recap', 'final-notes')">Suivant</button>
-    </div>
+    <div class="relative paddedForButton">
+        <div id="recap" class="displayNone">
+            <div id="recap-table">
+                <h2>En résumé</h2>
+                <table>
+                    <tbody>
+                        <tr class="kana">
+                            <th></th>
+                            <td>あ</td>
+                            <td>い</td>
+                            <td>う</td>
+                            <td>え</td>
+                            <td>お</td>
+                            <td>ん</td>
+                        </tr>
+                        <tr class="romaji">
+                            <th>En alphabet latin:</th>
+                            <td>A</td>
+                            <td>I</td>
+                            <td>U</td>
+                            <td>E</td>
+                            <td>O</td>
+                            <td>N</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onclick="nextTutorial('recap-table', 'recap-notes')">Suivant</button>
+            </div>
 
-    <div id="final-notes" class="hiddenBox">
-        <br /><h2>Note sur la prononciation à l'oral:</h2>
-        <p>
-            Veuillez noter que les voyelles japonaises ne se prononcent pas comme en français.<br />
-        </p>
-        <p>
-            Le u japonais se prononce « ou ».<br />
-            Le e japonais se prononce soit « é » ou « è », dépendamment du contexte.<br />
-        </p>
-        <p>
-            Nous n'en prendront pas compte lors des exercices.<br />
-        </p>
-        <button onclick="nextTutorial('tutorial', 'questions')">Démarer</button>
+            <div id="recap-notes" class="displayNone">
+                <br /><h2>Note sur la prononciation à l'oral:</h2>
+                <p>
+                    Veuillez noter que les voyelles japonaises ne se prononcent pas comme en français.<br />
+                </p>
+                <p>
+                    Le u japonais se prononce « ou ».<br />
+                    Le e japonais se prononce soit « é » ou « è », dépendamment du contexte.<br />
+                </p>
+                <p>
+                    Nous n'en prendront pas compte lors des exercices.<br />
+                </p>
+                <button onclick="nextTutorial('tutorial', 'questions', true)">Démarrer</button>
+            </div>
+        </div>
     </div>
 </div>

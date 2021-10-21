@@ -87,9 +87,6 @@ namespace MvcTutorial.Data
                                 { "いかん", "ikan" },
                                 { "きけん", "kiken" },
                             }, 1));
-                            tutorialView = "../Tutorials/Hiragana-Ka.cshtml";
-                            break;
-                        case "ga":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
                                 { "が", "ga" },
@@ -97,7 +94,7 @@ namespace MvcTutorial.Data
                                 { "ぐ", "gu" },
                                 { "げ", "ge" },
                                 { "ご", "go" },
-                            }, 1));
+                            }, 1, "tenten"));
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
                                 { "けげん", "kegen" },
@@ -106,7 +103,7 @@ namespace MvcTutorial.Data
                                 { "がんこ", "ganko" },
                                 { "ぐんか", "gunka" },
                             }, 1));
-                            tutorialView = "../Tutorials/Hiragana-Ga.cshtml";
+                            tutorialView = "../Tutorials/Hiragana-Ka.cshtml";
                             break;
                         case "ya":
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
@@ -121,7 +118,7 @@ namespace MvcTutorial.Data
                                 { "きゃく", "kyaku" },
                                 { "きんきゅう", "kinkyuu" },
                                 { "ぎゃく", "gyaku" },
-                            }, 1));
+                            }, 1, "combining-y"));
                             tutorialView = "../Tutorials/Hiragana-Ya.cshtml";
                             break;
                         case "sa":
@@ -155,7 +152,7 @@ namespace MvcTutorial.Data
                                 { "ず", "zu" },
                                 { "ぜ", "ze" },
                                 { "ぞ", "zo" },
-                            }, 1));
+                            }, 1, "tenten"));
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
                                 { "じゃ", "ja" },
@@ -259,7 +256,7 @@ namespace MvcTutorial.Data
                                 { "ぶ", "bu" },
                                 { "べ", "be" },
                                 { "ぼ", "bo" },
-                            }, 1));
+                            }, 1, "tenten"));
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
                                 { "べんとう", "bentou" },
@@ -275,7 +272,7 @@ namespace MvcTutorial.Data
                                 { "ぷ", "pu" },
                                 { "ぺ", "pe" },
                                 { "ぽ", "po" },
-                            }, 1));
+                            }, 1, "maru"));
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
                                 { "せんぱい", "senpai" },

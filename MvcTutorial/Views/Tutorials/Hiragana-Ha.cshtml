@@ -12,61 +12,80 @@
         <partial name="KanaTutorial.cshtml" view-data="ViewData" />
     }
 
-    <div id="recap" class="hiddenBox">
-        <h2>En résumé</h2>
-        <table>
-            <tbody>
-                <tr class="kana">
-                    <th></th>
-                    <td>は</td>
-                    <td>ひ</td>
-                    <td>ふ</td>
-                    <td>へ</td>
-                    <td>ほ</td>
-                </tr>
-                <tr class="romaji">
-                    <th>En alphabet latin:</th>
-                    <td>ha</td>
-                    <td>hi</td>
-                    <td>fu</td>
-                    <td>he</td>
-                    <td>ho</td>
-                </tr>
-                <tr></tr>
-                <tr class="kana">
-                    <th></th>
-                    <td>ば</td>
-                    <td>び</td>
-                    <td>ぶ</td>
-                    <td>べ</td>
-                    <td>ぼ</td>
-                </tr>
-                <tr class="romaji">
-                    <th>En alphabet latin:</th>
-                    <td>ba</td>
-                    <td>bi</td>
-                    <td>bu</td>
-                    <td>be</td>
-                    <td>bo</td>
-                </tr>
-                <tr class="kana">
-                    <th></th>
-                    <td>ぱ</td>
-                    <td>ぴ</td>
-                    <td>ぷ</td>
-                    <td>ぺ</td>
-                    <td>ぽ</td>
-                </tr>
-                <tr class="romaji">
-                    <th>En alphabet latin:</th>
-                    <td>pa</td>
-                    <td>pi</td>
-                    <td>pu</td>
-                    <td>pe</td>
-                    <td>po</td>
-                </tr>
-            </tbody>
-        </table>
-        <button onclick="nextTutorial('tutorial', 'questions')">Suivant</button>
+    <div class="relative paddedForButton">
+        <div id="recap" class="displayNone">
+            <h2>En résumé</h2>
+            <table>
+                <tbody>
+                    <tr class="kana">
+                        <th></th>
+                        <td>は</td>
+                        <td>ひ</td>
+                        <td>ふ</td>
+                        <td>へ</td>
+                        <td>ほ</td>
+                    </tr>
+                    <tr class="romaji">
+                        <th>En alphabet latin:</th>
+                        <td>Ha</td>
+                        <td>Hi</td>
+                        <td>Fu</td>
+                        <td>He</td>
+                        <td>Ho</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="nextTutorial('recap', 'questions', true)">Démarrer</button>
+        </div>
+
+        <div id="tenten" class="displayNone">
+            <h2>Le "ten-ten"</h2>
+            <table>
+                <tbody>
+                    <tr class="kana">
+                        <th></th>
+                        <td>ば</td>
+                        <td>び</td>
+                        <td>ぶ</td>
+                        <td>べ</td>
+                        <td>ぼ</td>
+                    </tr>
+                    <tr class="romaji">
+                        <th>En alphabet latin:</th>
+                        <td>Ba</td>
+                        <td>Bi</td>
+                        <td>Bu</td>
+                        <td>Be</td>
+                        <td>Bo</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="nextTutorial('tenten', 'questions', true)">Démarrer</button>
+        </div>
+
+        <div id="maru" class="displayNone">
+            <h2>Le "maru"</h2>
+            <table>
+                <tbody>
+                    <tr class="kana">
+                        <th></th>
+                        <td>ぱ</td>
+                        <td>ぴ</td>
+                        <td>ぷ</td>
+                        <td>ぺ</td>
+                        <td>ぽ</td>
+                    </tr>
+                    <tr class="romaji">
+                        <th>En alphabet latin:</th>
+                        <td>Pa</td>
+                        <td>Pi</td>
+                        <td>Pu</td>
+                        <td>Pe</td>
+                        <td>Po</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="nextTutorial('maru', 'questions', true)">Démarrer</button>
+        </div>
     </div>
 </div>
