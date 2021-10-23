@@ -2,12 +2,12 @@
     <h1 class="centered">Hiragana - La série Ta</h1>
     @{
         string[,] kanas = {
-        { "た", "Ta", "https://upload.wikimedia.org/wikipedia/commons/9/9a/Hiragana_%E3%81%9F_stroke_order_animation.gif" },
-        { "ち", "Chi", "https://upload.wikimedia.org/wikipedia/commons/3/32/Hiragana_%E3%81%A1_stroke_order_animation.gif" },
-        { "つ", "Tsu", "https://upload.wikimedia.org/wikipedia/commons/0/08/Hiragana_%E3%81%A4_stroke_order_animation.gif" },
-        { "て", "Te", "https://upload.wikimedia.org/wikipedia/commons/1/15/Hiragana_%E3%81%A6_stroke_order_animation.gif" },
-        { "と", "To", "https://upload.wikimedia.org/wikipedia/commons/6/6e/Hiragana_%E3%81%A8_stroke_order_animation.gif" },
-            };
+            { "た", "Ta", "https://upload.wikimedia.org/wikipedia/commons/9/9a/Hiragana_%E3%81%9F_stroke_order_animation.gif" },
+            { "ち", "Chi", "https://upload.wikimedia.org/wikipedia/commons/3/32/Hiragana_%E3%81%A1_stroke_order_animation.gif" },
+            { "つ", "Tsu", "https://upload.wikimedia.org/wikipedia/commons/0/08/Hiragana_%E3%81%A4_stroke_order_animation.gif" },
+            { "て", "Te", "https://upload.wikimedia.org/wikipedia/commons/1/15/Hiragana_%E3%81%A6_stroke_order_animation.gif" },
+            { "と", "To", "https://upload.wikimedia.org/wikipedia/commons/6/6e/Hiragana_%E3%81%A8_stroke_order_animation.gif" },
+        };
         ViewData["kanas"] = kanas;
         <partial name="KanaTutorial.cshtml" view-data="ViewData" />
     }
@@ -44,7 +44,7 @@
                     Ici 'chi' se prononce comme dans le mot 'cheese'.<br />
                     ちゃ se prononce 'cha', comme le mot 'channel' en anglais.<br />
                 </p>
-                <button onclick="nextTutorial('recap-notes', 'questions', true)">Démarrer</button>
+                <button onclick="nextTutorial('recap', 'questions', true)">Démarrer</button>
             </div>
         </div>
 
@@ -64,7 +64,7 @@
             <p>
                 Nous vous conseillons bien entendu d'écouter du japonais pour bien comprendre ce phénomène.<br />
             </p>
-            <button onclick="nextTutorial('double-consonants', 'questions', true)">Démarer</button>
+            <button onclick="nextTutorial('double-consonants', 'questions', true)">Démarrer</button>
         </div>
 
         <div id="tenten" class="displayNone">
@@ -96,9 +96,13 @@
                 <p>
                     Notez que ぢ et づ sont des exceptions plutôt rares.<br />
                     Dépendament du locuteur, ils sont parfois prononcés exactement comme じ et ず.<br />
-                    Ils apparaissent dans des verbes commes ちぢむ et つづく.<br />
+                    <br />
+                    <i>Note de l'auteur:</i><br />
+                    <i>J'ai malheureusement peu d'expertise sur les différents accents japonais.</i><br />
+                    <i>Sachez tout de même que la prononciation des hiraganas peut changer légèrement, selon l'époque ou la région.</i><br />
+                    <i>Pour les exercices qui suivent, écrivez les prononciations que nous avons recommandées dans le tableau précédent.</i><br />
                 </p>
-                <button onclick="nextTutorial('tenten-notes', 'questions', true)">Démarrer</button>
+                <button onclick="nextTutorial('tenten', 'questions', true)">Démarrer</button>
             </div>
         </div>
     </div>

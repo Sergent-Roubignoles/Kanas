@@ -9,28 +9,68 @@
         <partial name="KanaTutorial.cshtml" view-data="ViewData" />
     }
 
-    <div id="recap" class="hiddenBox">
-        <h2>En résumé</h2>
-        <table>
-            <tbody>
-                <tr class="kana">
-                    <th></th>
-                    <td>わ</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>を</td>
-                </tr>
-                <tr class="romaji">
-                    <th>En alphabet latin:</th>
-                    <td>wa</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>wo</td>
-                </tr>
-            </tbody>
-        </table>
-        <button onclick="nextTutorial('tutorial', 'questions')">Suivant</button>
+    <div class="relative paddedForButton">
+        <div id="recap" class="displayNone">
+            <h2>En résumé</h2>
+            <table>
+                <tbody>
+                    <tr class="kana">
+                        <th></th>
+                        <td>わ</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>を</td>
+                    </tr>
+                    <tr class="romaji">
+                        <th>En alphabet latin:</th>
+                        <td>wa</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>wo</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="nextTutorial('recap', 'wo-notes')">Suivant</button>
+        </div>
+
+        <div id="wo-notes" class="displayNone">
+            <h2>Le を</h2>
+            <div id="wo-notes-1">
+                <p>
+                    を est une exception très particulière.<br />
+                    <br />
+                    En fait, il se prononce rarement « wo ».<br />
+                    On entend plus souvent « o ».<br />
+                    Ne soyez pas surpris si la prononciation change selon la région ou l'époque.<br />
+                </p>
+                <button onclick="nextTutorial('wo-notes-1', 'wo-notes-2')">Suivant</button>
+            </div>
+
+            <div id="wo-notes-2" class="displayNone">
+                <p>
+                    を est une particule; soit, un outil de grammaire.<br />
+                    Il sert à identifier le complément direct d'une phrase.<br />
+                    C'est pourquoi aucun mot n'utilise を dans sa prononciation.<br />
+                    <br />
+                    Des exemples de phrase avec を:
+                    <h1>
+                        <br />
+                        <ruby>りんご<rt><i>(pomme)</i></rt></ruby>　を　
+                        <ruby>たべた<rt><i>(manger, au passé)</i></rt></ruby>
+                    </h1>
+                    Traduction: « J'ai mangé une pomme ».
+                    <h1>
+                        <br />
+                        <ruby>せんせい<rt><i>(professeur)</i></rt></ruby>　に　
+                        <ruby>しゅくだい<rt><i>(devoir)</i></rt></ruby>　を　
+                        <ruby>わたした<rt><i>(donner, au passé)</i></rt></ruby>
+                    </h1>
+                    Traduction: « J'ai donné mon devoir au professeur ».<br />
+                </p>
+                <button onclick="nextTutorial('wo-notes', 'questions', true)">Démarrer</button>
+            </div>
+        </div>
     </div>
 </div>

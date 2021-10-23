@@ -12,28 +12,30 @@
         <partial name="KanaTutorial.cshtml" view-data="ViewData" />
     }
 
-    <div id="recap" class="hiddenBox">
-        <h2>En résumé</h2>
-        <table>
-            <tbody>
-                <tr class="kana">
-                    <th></th>
-                    <td>ら</td>
-                    <td>り</td>
-                    <td>る</td>
-                    <td>れ</td>
-                    <td>ろ</td>
-                </tr>
-                <tr class="romaji">
-                    <th>En alphabet latin:</th>
-                    <td>ra</td>
-                    <td>ri</td>
-                    <td>ru</td>
-                    <td>re</td>
-                    <td>ro</td>
-                </tr>
-            </tbody>
-        </table>
-        <button onclick="nextTutorial('tutorial', 'questions')">Suivant</button>
+    <div class="relative paddedForButton">
+        <div id="recap" class="displayNone">
+            <h2>En résumé</h2>
+            <table>
+                <tbody>
+                    <tr class="kana">
+                        <th></th>
+                        <td>ら</td>
+                        <td>り</td>
+                        <td>る</td>
+                        <td>れ</td>
+                        <td>ろ</td>
+                    </tr>
+                    <tr class="romaji">
+                        <th>En alphabet latin:</th>
+                        <td>ra</td>
+                        <td>ri</td>
+                        <td>ru</td>
+                        <td>re</td>
+                        <td>ro</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="nextTutorial('recap', 'questions', true)">Démarrer</button>
+        </div>
     </div>
 </div>

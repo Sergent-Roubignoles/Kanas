@@ -2,55 +2,90 @@
     <h1 class="centered">Hiragana - La série Ka</h1>
     @{
         string[,] kanas = {
-        { "か", "Ka", "https://upload.wikimedia.org/wikipedia/commons/9/97/Hiragana_%E3%81%8B_stroke_order_animation.gif" },
-        { "き", "Ki", "https://upload.wikimedia.org/wikipedia/commons/1/18/Hiragana_%E3%81%8D_stroke_order_animation.gif" },
-        { "く", "Ku", "https://upload.wikimedia.org/wikipedia/commons/6/68/Hiragana_%E3%81%8F_stroke_order_animation.gif" },
-        { "け", "Ke", "https://upload.wikimedia.org/wikipedia/commons/5/57/Hiragana_%E3%81%91_stroke_order_animation.gif" },
-        { "こ", "Ko", "https://upload.wikimedia.org/wikipedia/commons/8/83/Hiragana_%E3%81%93_stroke_order_animation.gif" },
+            { "か", "Ka", "https://upload.wikimedia.org/wikipedia/commons/9/97/Hiragana_%E3%81%8B_stroke_order_animation.gif" },
+            { "き", "Ki", "https://upload.wikimedia.org/wikipedia/commons/1/18/Hiragana_%E3%81%8D_stroke_order_animation.gif" },
+            { "く", "Ku", "https://upload.wikimedia.org/wikipedia/commons/6/68/Hiragana_%E3%81%8F_stroke_order_animation.gif" },
+            { "け", "Ke", "https://upload.wikimedia.org/wikipedia/commons/5/57/Hiragana_%E3%81%91_stroke_order_animation.gif" },
+            { "こ", "Ko", "https://upload.wikimedia.org/wikipedia/commons/8/83/Hiragana_%E3%81%93_stroke_order_animation.gif" },
         };
         ViewData["kanas"] = kanas;
         <partial name="KanaTutorial.cshtml" view-data="ViewData" />
     }
 
-    <div id="recap" class="hiddenBox">
-        <h2>En résumé</h2>
-        <table>
-            <tbody>
-                <tr class="kana">
-                    <th></th>
-                    <td>か</td>
-                    <td>き</td>
-                    <td>く</td>
-                    <td>け</td>
-                    <td>こ</td>
-                </tr>
-                <tr class="romaji">
-                    <th>En alphabet latin:</th>
-                    <td>Ka</td>
-                    <td>Ki</td>
-                    <td>Ku</td>
-                    <td>Ke</td>
-                    <td>Ko</td>
-                </tr>
-            </tbody>
-        </table>
-        <button onclick="nextTutorial('recap', 'final-notes')">Suivant</button>
-    </div>
+    <div class="relative paddedForButton">
+        <div id="recap" class="displayNone">
+            <div id="recap-table">
+                <h2>En résumé</h2>
+                <table>
+                    <tbody>
+                        <tr class="kana">
+                            <th></th>
+                            <td>か</td>
+                            <td>き</td>
+                            <td>く</td>
+                            <td>け</td>
+                            <td>こ</td>
+                        </tr>
+                        <tr class="romaji">
+                            <th>En alphabet latin:</th>
+                            <td>Ka</td>
+                            <td>Ki</td>
+                            <td>Ku</td>
+                            <td>Ke</td>
+                            <td>Ko</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onclick="nextTutorial('recap-table', 'recap-notes')">Suivant</button>
+            </div>
 
-    <div id="final-notes" class="hiddenBox">
-        <br /><h2>Note sur la prononciation à l'oral:</h2>
-        <p>
-            En japonais, le son おう ne se prononce pas o-u, mais plutôt comme un o long.<br />
-        </p>
-        <p>
-            Par exemple, la capitale du japon, とうきょう, s'écrit toukyou.<br />
-            En français, on préfère cependant écrire Tokyo ou Tōkyō:<br />
-            Comme le ō n'apparait pas sur la majorité des claviers, il n'est pas utilisé courrament.<br />
-        </p>
-        <p>
-            De la même façon, えい se prononce comme un é long.<br />
-            いい et うう se prononcent aussi comme des voyelles longues.<br />
-        </p>
-        <button onclick="nextTutorial('tutorial', 'questions')">Démarer</button>
+            <div id="recap-notes" class="displayNone">
+                <br /><h2>Note sur la prononciation à l'oral:</h2>
+                <p>
+                    En japonais, le son おう ne se prononce pas o-u, mais plutôt comme un o long.<br />
+                </p>
+                <p>
+                    Par exemple, la capitale du japon, とうきょう, s'écrit toukyou.<br />
+                    En français, on préfère cependant écrire Tokyo ou Tōkyō:<br />
+                    Comme le ō n'apparait pas sur la majorité des claviers, il n'est pas utilisé courrament.<br />
+                </p>
+                <p>
+                    De la même façon, えい se prononce comme un é long.<br />
+                    いい et うう se prononcent aussi comme des voyelles longues.<br />
+                </p>
+                <button onclick="nextTutorial('recap', 'questions', true)">Démarrer</button>
+            </div>
+        </div>
+
+        <div id="tenten" class="displayNone">
+            <h2>Le ten-ten</h2>
+            <p>
+                La majorité des hiraganas ont une variante: le ten-ten.<br />
+                "ten-ten" signifie littéralement "point point". Ces traits qui ressemblent à des guillements modifient la consonne.<br />
+                Içi, le « k » devient un « g ».<br />
+            </p>
+            <table>
+                <tbody>
+                    <tr class="kana">
+                        <th></th>
+                        <td>が</td>
+                        <td>ぎ</td>
+                        <td>ぐ</td>
+                        <td>げ</td>
+                        <td>ご</td>
+                    </tr>
+                    <tr class="romaji">
+                        <th>En alphabet latin:</th>
+                        <td>Ga</td>
+                        <td>Gi</td>
+                        <td>Gu</td>
+                        <td>Ge</td>
+                        <td>Go</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="nextTutorial('tenten', 'questions', true)">Démarrer</button>
+        </div>
     </div>
 </div>
+

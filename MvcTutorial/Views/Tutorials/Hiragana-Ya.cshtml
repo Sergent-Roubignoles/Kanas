@@ -10,46 +10,45 @@
         <partial name="KanaTutorial.cshtml" view-data="ViewData" />
     }
 
-    <div id="recap" class="hiddenBox">
-        <h2>En résumé</h2>
-        <table>
-            <tbody>
-                <tr class="kana">
-                    <th></th>
-                    <td>や</td>
-                    <td></td>
-                    <td>ゆ</td>
-                    <td></td>
-                    <td>よ</td>
-                </tr>
-                <tr class="romaji">
-                    <th>En alphabet latin:</th>
-                    <td>ya</td>
-                    <td></td>
-                    <td>yu</td>
-                    <td></td>
-                    <td>yo</td>
-                </tr>
-            </tbody>
-        </table>
-        <button onclick="nextTutorial('recap', 'final-notes')">Suivant</button>
-    </div>
+    <div class="relative paddedForButton">
+        <div id="recap" class="displayNone">
+            <h2>En résumé</h2>
+            <table>
+                <tbody>
+                    <tr class="kana">
+                        <th></th>
+                        <td>や</td>
+                        <td></td>
+                        <td>ゆ</td>
+                        <td></td>
+                        <td>よ</td>
+                    </tr>
+                    <tr class="romaji">
+                        <th>En alphabet latin:</th>
+                        <td>ya</td>
+                        <td></td>
+                        <td>yu</td>
+                        <td></td>
+                        <td>yo</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="nextTutorial('recap', 'questions', true)">Démarrer</button>
+        </div>
 
-    <div id="final-notes" class="hiddenBox">
-        <p>
-            Cette série a une particularité très importante:<br />
-        </p>
-        <p>
-            Regardez les exemples suivants.<br />
-            きゃ = kya<br />
-            きゅ = kyu<br />
-            きょ = kyo<br />
-        </p>
-        <p>
-            On peut mettre ces hiraganas en minuscule pour les combiner avec un son qui finit en i.<br />
-            きや se prononce 'kiya', mais きゃ se prononce 'kya'.<br />
-            Il en sera ainsi pour toutes les autres consonnes suivies d'un i.<br />
-        </p>
-        <button onclick="nextTutorial('tutorial', 'questions')">Démarer</button>
+        <div id="combining-y" class="displayNone">
+            <p>
+                Cette série a une particularité très importante:<br />
+                <br />
+                Regardez les exemples suivants.<br />
+                きゃ = kya<br />
+                きゅ = kyu<br />
+                きょ = kyo<br />
+                <br />
+                On peut mettre ces hiraganas en minuscule pour les combiner avec un son qui finit en i.<br />
+                Il en sera ainsi pour toutes les autres consonnes suivies d'un i.<br />
+            </p>
+            <button onclick="nextTutorial('combining-y', 'questions', true)">Démarer</button>
+        </div>
     </div>
 </div>
