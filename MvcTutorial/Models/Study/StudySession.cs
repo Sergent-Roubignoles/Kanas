@@ -17,11 +17,13 @@ namespace MvcTutorial.Models.Study
         public bool studyComplete = false;
         public string tutorialView;
         public string extraTutorialId = null;
+        public string nextStudyLink = null;
 
-        public StudySession(List<StudyTopicGroup> topicGroups, string tutorialView)
+        public StudySession(List<StudyTopicGroup> topicGroups, string tutorialView, string nextStudyLink)
         {
             this.topicGroups = topicGroups;
             this.tutorialView = tutorialView;
+            this.nextStudyLink = nextStudyLink;
             ChangeQuestion();
         }
 

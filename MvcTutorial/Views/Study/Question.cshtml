@@ -27,7 +27,7 @@
 
     <div class="studyCompleteBox">
         <p>Félicitations! Vous avez terminé!</p>
-        <a asp-controller="Study" asp-action="Index" id="linkToMenu">Choisir une autre étude</a>
+        <a asp-controller="Study" asp-action=@Model.NextStudyLink id="linkToMenu" class="colored-link">Choisir une autre étude</a>
     </div>
 
     <br />

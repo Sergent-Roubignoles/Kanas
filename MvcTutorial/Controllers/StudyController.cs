@@ -35,7 +35,7 @@ namespace MvcTutorial.Controllers
             var session = StudySessionManager.NewSessionWithTopicCode(topicCode);
             var sessionKey = StudySessionManager.AddSession(session);
 
-            var viewData = new QuestionViewModel(sessionKey, session.currentQuestion.question, session.QuestionsRemaining(), session.tutorialView);
+            var viewData = new QuestionViewModel(sessionKey, session.currentQuestion.question, session.QuestionsRemaining(), session.tutorialView, session.nextStudyLink);
             return View("Question", viewData);
         }
 

@@ -350,7 +350,7 @@ namespace MvcTutorial.Data
                     break;
             }
 
-            return new StudySession(topicGroups, tutorialView);
+            return new StudySession(topicGroups, tutorialView, "Hiragana");
         }
 
         private static StudyTopicGroup stringArrayToTopicGroup(string[,] topics, int repetitions, string extraTutorial = null)
