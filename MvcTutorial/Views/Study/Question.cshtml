@@ -65,7 +65,7 @@
                     $('#questionsRemaining').text(jsonResponse.questionsRemaining);
                     $('#nextQuestion').focus();
 
-                    if (answer === jsonResponse.correctAnswer) {
+                    if (jsonResponse.answerWasAccepted) {
                         $('.feedbackBox').first().css("background-color", "var(--primary-dark)");
                         $('#correctAnswer').text("Exact!");
                     }

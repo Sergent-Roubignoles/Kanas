@@ -25,11 +25,17 @@ body {
     color: var(--text-light);
 }
 
-a:visited{
-    color: var(--text-light)
+a:visited {
+    color: var(--text-light);
 }
 a:link {
-    color: var(--text-light)
+    color: var(--text-light);
+}
+a:link.colored-link {
+    color: #1597BB;
+}
+a:visited.colored-link {
+    color: #A12568;
 }
 
 /*#region Generic styles*/

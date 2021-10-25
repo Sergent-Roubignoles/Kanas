@@ -47,6 +47,7 @@ namespace MvcTutorial.Controllers
         /// <returns>The correct answer to the question.</returns>
         public string VerifyAnswer(string sessionKey, string answer)
         {
+            answer = answer.ToLower();
             //Authentificate user and validate answer
             var guid = new Guid(sessionKey);
             var session = StudySessionManager.GetSession(guid);
@@ -55,6 +56,7 @@ namespace MvcTutorial.Controllers
             //Send correct answer back to user
             dynamic jsonResponse = new JObject();
             jsonResponse.correctAnswer = correctAnswer;
+            jsonResponse.answerWasAccepted = (correctAnswer == answer);
             jsonResponse.questionsRemaining = session.QuestionsRemaining();
             return Newtonsoft.Json.JsonConvert.SerializeObject(jsonResponse);
         }

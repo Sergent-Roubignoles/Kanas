@@ -198,15 +198,15 @@ namespace MvcTutorial.Data
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
                                 { "だ", "da" },
-                                { "ぢ", "dji" },
-                                { "づ", "dzu" },
+                                { "ぢ", "ji" },
+                                { "づ", "zu" },
                                 { "で", "de" },
                                 { "ど", "do" },
                             }, 1, "tenten"));
                             topicGroups.Add(stringArrayToTopicGroup(new string[,]
                             {
                                 { "そだつ", "sodatsu" },
-                                { "つづく", "tsudzuku" },
+                                { "つづく", "tsuzuku" },
                                 { "だって", "datte" },
                                 { "どこ", "doko" },
                             }, 1));
