@@ -136,6 +136,14 @@ footer {
     border-radius: 5px;
     float: right;
 }
+.indexButtonUnavailable {
+    background-color: var(--layer1);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    float: right;
+}
 /*#endregion*/
 
 /*#region Study index styles*/

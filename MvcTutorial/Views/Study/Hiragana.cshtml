@@ -1,4 +1,15 @@
-﻿<table class="box kanaIndex">
+﻿<div class="box cropToCenter">
+    <h2>Les hiraganas</h2>
+    <p>
+        Les hiraganas sont un groupe de 46 caractères.<br />
+        Ce sont les caractères les plus simples: ils ont une seule prononciation, et s'écrivent en quelques traits.<br />
+        <br />
+        Nous avons séparé les hiraganas en 10 exercices.<br />
+        Si vous n'avez jamais vu les hiraganas auparavant, commencez avec la série #1.<br />
+    </p>
+</div>
+<br />
+<table class="box kanaIndex">
     <tbody>
         <tr>
             <th><div class="romaji">Série</div></th>
@@ -6,26 +17,26 @@
         @{
             string[,] values = new string[,]
             {
-            { "A", "あいうえお　ん", "h-a" },
-            { "Ka", "かきくけこ", "h-ka" },
-            { "Ya", "や　ゆ　よ", "h-ya" },
-            { "Sa", "さしすせそ", "h-sa" },
-            { "Ta", "たちつてと", "h-ta" },
-            { "Na", "なにぬねの", "h-na" },
-            { "Ha", "はひふへほ", "h-ha" },
-            { "Ma", "まみむめも", "h-ma" },
-            { "Ra", "らりるれろ", "h-ra" },
-            { "Wa", "わ　　　を", "h-wa" },
+            {"あ い う え お ん", "h-a" },
+            {"か き く け こ", "h-ka" },
+            {"や 　 ゆ 　 よ", "h-ya" },
+            {"さ し す せ そ", "h-sa" },
+            {"た ち つ て と", "h-ta" },
+            {"な に ぬ ね の", "h-na" },
+            {"は ひ ふ へ ほ", "h-ha" },
+            {"ま み む め も", "h-ma" },
+            {"ら り る れ ろ", "h-ra" },
+            {"わ 　 　 　 を", "h-wa" },
             };
 
             for (int i = 0; i < values.GetLength(0); i++)
             {
                 <tr>
-                    <th><div class="romaji">@values[i, 0]</div></th>
-                    <td class="kana">@values[i, 1]</td>
+                    <th>#@(i+1)</th>
+                    <td class="kana">@values[i, 0]</td>
                     <td>
                         <form action="StartStudy" method="post">
-                            <input type="hidden" name="topicCode" value="@values[i, 2]" />
+                            <input type="hidden" name="topicCode" value="@values[i, 1]" />
                             <input type="submit" value="Apprendre" class="indexInput" />
                         </form>
                     </td>
