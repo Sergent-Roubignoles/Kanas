@@ -1,0 +1,66 @@
+﻿<div class="tutorialBox" id="tutorial">
+    <h1 class="centered">Katakana - Les voyelles</h1>
+    @{
+        string[,] kanas = {
+            { "ア", "A"},
+            { "イ", "I"},
+            { "ウ", "U"},
+            { "エ", "E"},
+            { "オ", "O"},
+            { "ン", "N"},
+        };
+        ViewData["kanas"] = kanas;
+        <partial name="KanaTutorial.cshtml" view-data="ViewData"/>
+    }
+
+    <div class="relative paddedForButton">
+        <div id="recap" class="displayNone">
+            <div id="recap-table">
+                <h2>En résumé</h2>
+                <table>
+                    <tbody>
+                        <tr class="kana">
+                            <th></th>
+                            <td>ア</td>
+                            <td>イ</td>
+                            <td>ウ</td>
+                            <td>エ</td>
+                            <td>オ</td>
+                            <td>ン</td>
+                        </tr>
+                        <tr class="romaji">
+                            <th>En alphabet latin:</th>
+                            <td>A</td>
+                            <td>I</td>
+                            <td>U</td>
+                            <td>E</td>
+                            <td>O</td>
+                            <td>N</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onclick="nextTutorial('recap-table', 'recap-notes')">Suivant</button>
+            </div>
+
+            <div id="recap-notes" class="displayNone">
+                <br /><h2>Note sur la prononciation à l'oral:</h2>
+                <p>
+                    Les katakanas, comme les hiraganas, sont utilisés pour écrire aux sons.<br />
+                </p>
+                <p>
+                    On pourrait comparer les katakanas aux lettres majuscules<br />
+                    On n'écrit pas de phrases complètes en katakana. On les utilise seulement dans certains contextes, le plus commun étant pour des mots d'origine étrangère <br />
+                </p>
+                <p>
+                    <b>Comment écrire et prononcer un mot d'origine étrangère</b><br />
+                    En japonais, nous sommes limités par les syllabes qui existent en hiragana et katakana.<br />
+                    Par exemple, « France », se prononcera « furansu » et s'écrira フランス.<br />
+                    <br />
+                    Dans les exercices qui suivent, nous utiliserons surtout des mots anglais, écrits en katakanas.<br />
+                    Il vous faudra un peu de pratique avant de pouvoir facilement « traduire » un mot en katakana.<br />
+                </p>
+                <button onclick="nextTutorial('recap', 'questions', true)">Démarrer</button>
+            </div>
+        </div>
+    </div>
+</div>

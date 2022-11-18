@@ -341,10 +341,63 @@ namespace MvcTutorial.Data
                     switch (split[1])
                     {
                         case "a":
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "ア", "a" },
+                                { "イ", "i" },
+                                { "ウ", "u" },
+                                { "エ", "e" },
+                                { "オ", "o" },
+                                { "ン", "n" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "アウエー", "auee" }, // Away
+                                { "エーアイ", "eeai" }, // A.I.
+                            }, 1));
+                            tutorialView = "../Tutorials/Katakana-A.cshtml";
                             break;
                         case "ka":
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "カ", "ka" },
+                                { "キ", "ki" },
+                                { "ク", "ku" },
+                                { "ケ", "ke" },
+                                { "コ", "ko" },
+                            }, 2));
+                            tutorialView = "../Tutorials/Katakana-Ka.cshtml";
                             break;
                         case "sa":
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "サ", "sa" },
+                                { "シ", "shi" },
+                                { "ス", "su" },
+                                { "セ", "se" },
+                                { "ソ", "so" },
+                            }, 2));
+                            tutorialView = "../Tutorials/Katakana-Sa.cshtml";
+                            break;
+                        case "ta":
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "タ", "ta" },
+                                { "チ", "chi" },
+                                { "ツ", "tsu" },
+                                { "テ", "te" },
+                                { "ト", "to" },
+                            }, 2));
+                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            {
+                                { "ツイッター", "tsuittaa" },
+                                { "アンケート", "ankeeto"},
+                                { "チートコード", "chiitokoodo"},
+                                { "テント", "tento"},
+                                { "アジト", "ajito" },
+                                { "アウト", "auto"}
+                            }, 1));
+                            tutorialView = "../Tutorials/Katakana-ta.cshtml";
                             break;
                     }
                     break;

@@ -1,1 +1,46 @@
-﻿<h2>À venir</h2>
+﻿<div class="box cropToCenter">
+    <h2>Les katakanas</h2>
+    <p>
+        Les katakanas sont un groupe de 46 caractères.<br />
+        Comme les hiraganas, ils ont une seule prononciation.<br />
+        <br />
+        Pour ces exercices, <b>nous supposons que vous avez terminé les exercices des hiraganas.</b><br />
+    </p>
+</div>
+<br />
+<table class="box kanaIndex">
+    <tbody>
+        <tr>
+            <th><div class="romaji">Série</div></th>
+        </tr>
+        @{
+            string[,] values = new string[,]
+            {
+            {"ア イ ウ エ オ ン", "k-a" },
+            {"カ キ ク ケ コ", "k-ka" },
+            {"ヤ 　 ユ 　 ヨ", "k-ya" },
+            {"サ シ ス セ ソ", "k-sa" },
+            {"タ チ ツ テ ト", "k-ta" },
+            {"ナ ニ ヌ ネ ノ", "k-na" },
+            {"ハ ヒ フ ヘ ホ", "k-ha" },
+            {"マ ミ ム メ モ", "k-ma" },
+            {"ラ リ ル レ ロ", "k-ra" },
+            {"ワ 　 　 　 ヲ", "k-wa" },
+            };
+
+            for (int i = 0; i < values.GetLength(0); i++)
+            {
+                <tr>
+                    <th>#@(i+1)</th>
+                    <td class="kana">@values[i, 0]</td>
+                    <td>
+                        <form action="StartStudy" method="post">
+                            <input type="hidden" name="topicCode" value="@values[i, 1]" />
+                            <input type="submit" value="Apprendre" class="indexInput" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
