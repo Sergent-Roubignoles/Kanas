@@ -13,13 +13,24 @@
                     <tr class="centered">
                         <td>Prononciation:</td>
                         <td>En hiragana:</td>
-                        <td>L'ordre des traits:</td>
+                        @{
+                            // Not all studies have a GIF for stroke order
+                            if (kanas.Rank >= 3)
+                            {
+                                <td>L'ordre des traits:</td>
+                            }
+                        }
                     </tr>
                     <tr>
                         <td class="tutorialRomaji">@kanas[i, 1]</td>
                         <td class="tutorialKana">@kanas[i, 0]</td>
                         <td>
-                            <img src=@kanas[i, 2] />
+                            @{
+                                if (kanas.Rank >= 3)
+                                {
+                                    <img src=@kanas[i, 2] />
+                                }
+                            }
                         </td>
                     </tr>
                 </tbody>
