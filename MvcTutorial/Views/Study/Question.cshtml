@@ -22,6 +22,7 @@
 
     <div class="feedbackBox">
         <p id="correctAnswer"></p>
+        <i id="answerExplanation"></i>
         <button id="nextQuestion" onclick="GetNextQuestion()">Prochaine question</button>
     </div>
 
@@ -35,10 +36,6 @@
     <h2 id="questionsRemaining">@Model.TotalQuestions</h2>
 </div>
 
-<!--
-
-<ruby>人権蹂躙<rt>じんけんじゅうりん</rt></ruby>
--->
 @section Scripts{
     <script>
         window.onload = function () {
@@ -73,6 +70,7 @@
                         $('.feedbackBox').first().css("background-color", "var(--secondary-dark)");
                         $('#correctAnswer').text("Réponse attendue: " + jsonResponse.correctAnswer);
                     }
+                    $('#answerExplanation').text(jsonResponse.answerExplanation);
                 }
             })
         }

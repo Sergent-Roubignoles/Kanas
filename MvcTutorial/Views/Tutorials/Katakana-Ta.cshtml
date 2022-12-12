@@ -1,0 +1,47 @@
+﻿<div class="tutorialBox" id="tutorial">
+    <h1 class="centered">Katakana - Les voyelles</h1>
+    @{
+        string[,] kanas = {
+            { "タ", "Ta"},
+            { "チ", "Chi"},
+            { "ツ", "Tsu"},
+            { "テ", "Te"},
+            { "ト", "To"},
+        };
+        ViewData["kanas"] = kanas;
+        <partial name="KanaTutorial.cshtml" view-data="ViewData"/>
+    }
+
+    <div class="relative paddedForButton">
+        <div id="recap" class="displayNone">
+            <div id="recap-table">
+                <h2>En résumé</h2>
+                <table>
+                    <tbody>
+                        <tr class="kana">
+                            <th></th>
+                            <td>タ</td>
+                            <td>チ</td>
+                            <td>ツ</td>
+                            <td>テ</td>
+                            <td>ト</td>
+                        </tr>
+                        <tr class="romaji">
+                            <th>En alphabet latin:</th>
+                            <td>Ta</td>
+                            <td>Chi</td>
+                            <td>Tsu</td>
+                            <td>Te</td>
+                            <td>To</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onclick="nextTutorial('recap-table', 'recap-notes')">Suivant</button>
+            </div>
+
+            <div id="recap-notes" class="displayNone">
+                <button onclick="nextTutorial('recap', 'questions', true)">Démarrer</button>
+            </div>
+        </div>
+    </div>
+</div>

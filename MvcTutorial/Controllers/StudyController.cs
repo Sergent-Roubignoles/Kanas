@@ -51,6 +51,7 @@ namespace MvcTutorial.Controllers
             //Authentificate user and validate answer
             var guid = new Guid(sessionKey);
             var session = StudySessionManager.GetSession(guid);
+            var answerExplanation = session.currentQuestion.answerExplanation;
             var correctAnswer = session.VerifyAnswer(answer);
 
             //Send correct answer back to user
@@ -58,6 +59,7 @@ namespace MvcTutorial.Controllers
             jsonResponse.correctAnswer = correctAnswer;
             jsonResponse.answerWasAccepted = (correctAnswer == answer);
             jsonResponse.questionsRemaining = session.QuestionsRemaining();
+            jsonResponse.answerExplanation = answerExplanation;
             return Newtonsoft.Json.JsonConvert.SerializeObject(jsonResponse);
         }
 

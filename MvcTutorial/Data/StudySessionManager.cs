@@ -388,15 +388,17 @@ namespace MvcTutorial.Data
                                 { "テ", "te" },
                                 { "ト", "to" },
                             }, 2));
-                            topicGroups.Add(stringArrayToTopicGroup(new string[,]
+                            List<StudyTopic> topicList = new List<StudyTopic>()
                             {
-                                { "ツイッター", "tsuittaa" },
-                                { "アンケート", "ankeeto"},
-                                { "チートコード", "chiitokoodo"},
-                                { "テント", "tento"},
-                                { "アジト", "ajito" },
-                                { "アウト", "auto"}
-                            }, 1));
+                                new StudyTopic("ツイッター", "tsuittaa", 1, "Twitter"),
+                                new StudyTopic("アンケート", "ankeeto", 1, "Du français: Enquête"),
+                                new StudyTopic("チートコード", "chiitokoodo", 1, "De l'anglais: Cheat code"),
+                                new StudyTopic("テント", "tento", 1, "De l'anglais: Tent"),
+                                new StudyTopic("アジト", "ajito", 1, "Du Russe: Agitpunkt"),
+                                new StudyTopic("アウト", "auto", 1, "De l'anglais: Out"),
+                            };
+                            StudyTopicGroup newGroup = new StudyTopicGroup(topicList);
+                            topicGroups.Add(newGroup);
                             tutorialView = "../Tutorials/Katakana-ta.cshtml";
                             break;
                     }
