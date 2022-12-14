@@ -9,51 +9,45 @@
     </p>
 </div>
 <br />
-<table class="box kanaIndex">
-    <tbody>
-        <tr>
-            <th><div class="romaji">Série</div></th>
-        </tr>
-        @{
-            string[,] values = new string[,]
-            {
-            {"あ い う え お ん", "h-a" },
-            {"か き く け こ", "h-ka" },
-            {"や 　 ゆ 　 よ", "h-ya" },
-            {"さ し す せ そ", "h-sa" },
-            {"た ち つ て と", "h-ta" },
-            {"な に ぬ ね の", "h-na" },
-            {"は ひ ふ へ ほ", "h-ha" },
-            {"ま み む め も", "h-ma" },
-            {"ら り る れ ろ", "h-ra" },
-            {"わ 　 　 　 を", "h-wa" },
-            };
-
-            for (int i = 0; i < values.GetLength(0); i++)
-            {
-                <tr>
-                    <th>#@(i+1)</th>
-                    <td class="kana">@values[i, 0]</td>
-                    <td>
-                        <form action="StartStudy" method="post">
-                            <input type="hidden" name="topicCode" value="@values[i, 1]" />
-                            <input type="submit" value="Apprendre" class="indexInput" />
-                        </form>
-                    </td>
-                </tr>
-            }
-        }
-    </tbody>
-</table>
-
-@*Bootstrap version*@
 <div class="container">
-    <div class="row">
-        <div class="col-2">あ</div>
-        <div class="col-2">い</div>
-        <div class="col-2">う</div>
-        <div class="col-2">え</div>
-        <div class="col-2">お</div>
-        <div class="col-2">ん</div>
+    <div class="row justify-content-center">
+        <div class="col-md-auto h2">あ　い　う　え　お</div>
+        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-a">Apprendre</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-auto h2">か　き　く　け　こ</div>
+        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ka">Apprendre</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-auto h2">さ　し　す　せ　そ</div>
+        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-sa">Apprendre</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-auto h2">た　ち　つ　て　と</div>
+        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ta">Apprendre</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-auto h2">な　に　ぬ　ね　の</div>
+        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-na">Apprendre</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-auto h2">は　ひ　ふ　へ　ほ</div>
+        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ha">Apprendre</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-auto h2">ま　み　む　め　も</div>
+        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ma">Apprendre</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-auto h2">や　　　ゆ　　　よ</div>
+        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ya">Apprendre</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-auto h2">ら　り　る　れ　ろ</div>
+        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ra">Apprendre</a>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-auto h2">わ　　　　　　　を</div>
+        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-wa">Apprendre</a>
     </div>
 </div>
