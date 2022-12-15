@@ -1,52 +1,62 @@
-﻿<div class="box cropToCenter">
-    <h2>Les katakanas</h2>
-    <p>
-        Les katakanas sont un groupe de 46 caractères.<br />
-        Comme les hiraganas, ils ont une seule prononciation.<br />
-        <br />
-        Pour ces exercices, <b>nous supposons que vous avez terminé les exercices des hiraganas.</b><br />
-    </p>
+﻿<div class="card text-bg-dark">
+    <div class="row">
+        <div class="col-2 display-2 text-center">
+            カ<br />
+            タ<br />
+            カ<br />
+            ナ
+        </div>
+        <div class="col-6 card-body">
+            <h2 class="card-title">Les katakanas</h2>
+            <p class="card-text">
+                Les katakanas sont un groupe de 46 caractères.<br />
+                Comme les hiraganas, ils ont une seule prononciation.<br />
+                <br />
+                Pour ces exercices, <b>nous supposons que vous avez terminé les exercices des hiraganas.</b><br />
+            </p>
+        </div>
+    </div>
 </div>
 <br />
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">ア　イ　ウ　エ　オ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-a">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">カ　キ　ク　ケ　コ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ka">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">サ　シ　ス　セ　ソ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-sa">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">タ　チ　ツ　テ　ト</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ta">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">ナ　ニ　ヌ　ネ　ノ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-na">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">ハ　ヒ　フ　ヘ　ホ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ha">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">マ　ミ　ム　メ　モ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ma">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">ヤ　　　ユ　　　ヨ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ya">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">ラ　リ　ル　レ　ロ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ra">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">ワ　　　　　　　ヲ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-wa">Apprendre</a>
-    </div>
-</div>
+<ol class="list-group list-group-numbered container col-md-6">
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">ア イ ウ エ オ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-a">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">カ キ ク ケ コ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ka">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">サ シ ス セ ソ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-sa">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">タ チ ツ テ ト</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ta">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">ナ ニ ヌ ネ ノ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-na">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">ハ ヒ フ ヘ ホ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ha">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">マ ミ ム メ モ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ma">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">ヤ 　 ユ 　 ヨ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ya">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">ラ リ ル レ ロ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-ra">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">ワ 　 　 　 ヲ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="k-wa">Apprendre</a>
+    </li>
+</ol>

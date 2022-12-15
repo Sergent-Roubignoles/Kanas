@@ -17,7 +17,6 @@
 body {
     font-family: roboto;
     height: 100vh;
-    width: 60%;
     margin: auto;
     display: flex;
     flex-direction: column;

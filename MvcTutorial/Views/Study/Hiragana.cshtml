@@ -1,53 +1,62 @@
-﻿<div class="box cropToCenter">
-    <h2>Les hiraganas</h2>
-    <p>
+﻿<div class="card text-bg-dark">
+    <h2 class="card-title">Les hiraganas</h2>
+    <p class="card-text">
         Les hiraganas sont un groupe de 46 caractères.<br />
-        Ce sont les caractères les plus simples: ils ont une seule prononciation, et s'écrivent en quelques traits.<br />
+        Chaque hiragana représente une syllabe. Par exemple, か se prononce « ka ».<br />
         <br />
-        Nous avons séparé les hiraganas en 10 exercices.<br />
-        Si vous n'avez jamais vu les hiraganas auparavant, commencez avec la série #1.<br />
+        Les hiraganas forment la base du système d'écriture japonais.
+        Techniquement, il serait possible d'écrire uniquement en hiragana.
+        Par exemple, la phrase suivante serait valide: <br />
+        <br />
+        はじめまして、たなかともうします。<br />
+        <br />
+        Cependant, on préfère normalement écrire avec les <i>kanjis</i> lorsque possible.
+        C'est pourquoi la phrase précédente s'écrirait normalement ainsi:<br />
+        <br />
+        初めまして、田中と申します。
+        <br />
     </p>
 </div>
 <br />
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">あ　い　う　え　お</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-a">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">か　き　く　け　こ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ka">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">さ　し　す　せ　そ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-sa">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">た　ち　つ　て　と</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ta">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">な　に　ぬ　ね　の</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-na">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">は　ひ　ふ　へ　ほ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ha">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">ま　み　む　め　も</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ma">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">や　　　ゆ　　　よ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ya">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">ら　り　る　れ　ろ</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ra">Apprendre</a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-auto h2">わ　　　　　　　を</div>
-        <a class="btn btn-outline-primary" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-wa">Apprendre</a>
-    </div>
-</div>
+<ol class="list-group list-group-numbered container col-md-6">
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">あ い う え お</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-a">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">か き く け こ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ka">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">さ し す せ そ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-sa">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">た ち つ て と</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ta">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">な に ぬ ね の</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-na">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">は ひ ふ へ ほ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ha">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">ま み む め も</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ma">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">や 　 ゆ 　 よ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ya">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">ら り る れ ろ</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-ra">Apprendre</a>
+    </li>
+    <li class="list-group-item d-flex text-bg-dark justify-content-between">
+        <div class="h2">わ 　 　 　 を</div>
+        <a class="btn btn-outline-primary h-100" asp-controller="Study" asp-action="StartStudy" asp-route-topicCode="h-wa">Apprendre</a>
+    </li>
+</ol>
